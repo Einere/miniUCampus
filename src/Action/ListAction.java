@@ -14,19 +14,27 @@ public class ListAction implements CommandAction {
     public String requestPro(HttpServletRequest request, HttpServletResponse response) throws Throwable {
         request.setCharacterEncoding("utf-8");
 
-        //if para is null, set dest session
+        HttpSession session = request.getSession();
+        //set dest. for choice whether lecture for free
         try{
-            if(!request.getParameter("dest").equals(null)) request.getSession().setAttribute("dest", request.getParameter("dest"));
+            //change dest
+            if(!request.getParameter("dest").equals(null)) session.setAttribute("dest", request.getParameter("dest"));
         }
         catch(Exception e){
-
+            //not change dest
         }
 
-        //get post list by dest
-        String dest = request.getSession().getAttribute("dest").toString();
-        ArrayList<BoardBean> postList = BoardDao.getInstance().getPostList(dest);
+        //get lecture list for select
+        ArrayList<String> lectureList = BoardDao.getInstance().getLectureList(session.getAttribute("id").toString());
+        //get 1st lecture name
+        String lectureName = lectureList.get(0);
+        //get post list by dest, lecture name
+        String dest = session.getAttribute("dest").toString();
+        ArrayList<BoardBean> postList = BoardDao.getInstance().getPostList(dest, lectureName);
+        //set request attr
         request.setAttribute("postList", postList);
-
+        request.setAttribute("lectureList", lectureList);
+        request.setAttribute("dest", dest);
         return "board.jsp";
     }
 }

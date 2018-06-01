@@ -9,12 +9,12 @@
 <%@ page import="java.util.regex.Pattern" %>
 <%@ page import="java.sql.*" %>
 <%@ page import="java.text.*" %>
-<%@ page import="java.util.ArrayList"%>
+<%@ page import="java.util.ArrayList" %>
 <%@ page import="Beans.BoardBean" %>
-<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <html>
 <head>
-    <title>lecture</title>
+    <title>Board</title>
     <link rel="icon" type="image/png" href="images/icons/favicon.ico"/>
     <link rel="stylesheet" type="text/css" href="vendor/bootstrap/css/bootstrap.min.css">
     <link rel="stylesheet" type="text/css" href="fonts/font-awesome-4.7.0/css/font-awesome.min.css">
@@ -26,17 +26,17 @@
     <link rel="stylesheet" type="text/css" href="css/layer_button.css"/>
 </head>
 <body>
-<div>
-    <label>lecture : </label>
-    <select name="lectures" id="">
-        <c:forEach items="${lectureList}" var="lecture">
-            <option value="${lecture.name}">${lecture.name}</option>
-        </c:forEach>
-    </select>
-</div>
 <div align="center">
+    <c:if test="${dest eq 'lecture'}">
+        <label>lecture : </label>
+        <select name="lectures" id="lectures" onchange="selectChanged()">
+            <c:forEach items="${lectureList}" var="lecture">
+                <option value="${lecture}">${lecture}</option>
+            </c:forEach>
+        </select>
+    </c:if>
     <div>
-        <h1>lecture</h1>
+        <h1>Board</h1>
     </div>
     <div class="limiter">
         <div class="container-table100">
@@ -62,7 +62,8 @@
                             <c:forEach items="${postList}" var="post">
                                 <tr class="row100 body">
                                     <td class="cell100 column1">${post.index}</td>
-                                    <td class="cell100 column2" onclick="window.location.href='count.do?index=${post.index}'">${post.title}</td>
+                                    <td class="cell100 column2"
+                                        onclick="window.location.href='count.do?index=${post.index}'">${post.title}</td>
                                     <td class="cell100 column3">${post.writer}</td>
                                     <td class="cell100 column4">${post.date}</td>
                                     <td class="cell100 column5">${post.view}</td>
@@ -90,6 +91,10 @@
             ps.update();
         })
     });
+
+    function selectChanged() {
+        window.location.href = "list.do?lecture=" + $('#lectures').selectedItem;
+    }
 </script>
 <script src="js/main.js"></script>
 </body>

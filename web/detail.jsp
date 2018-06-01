@@ -12,11 +12,6 @@
 <head>
     <title>detail</title>
     <link rel="stylesheet" type="text/css" href="css/layer_button.css"/>
-    <style>
-        .download{
-            cursor: pointer;
-        }
-    </style>
     <script>
         function onDownload(index) {
             let elem = document.getElementById("download");

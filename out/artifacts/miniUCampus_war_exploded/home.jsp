@@ -1,3 +1,4 @@
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%--
   Created by IntelliJ IDEA.
   User: HJ
@@ -16,10 +17,17 @@
         function free(){
             window.location.href="list.do?dest=lecture";
         }
+
+        $(document).ready(function(){
+
+        });
     </script>
 </head>
 <body>
 <button onclick="lecture()">lecture</button>
 <button onclick="free()">free</button>
+<c:if test="${identity eq 'professor'}">
+    <button>student</button>
+</c:if>
 </body>
 </html>

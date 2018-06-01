@@ -15,7 +15,8 @@ public class SigninAction implements CommandAction {
         String id = request.getParameter("id");
         String pw = request.getParameter("pw");
         String identity = request.getParameter("identity");
-
+        //set identity
+        request.setAttribute("identity", identity);
         /*//connect to DB
         CommonDao cd = new CommonDao();
         String sql = "";

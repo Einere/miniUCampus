@@ -16,10 +16,11 @@ public class BoardDao extends CommonDao {
         return _instance;
     }
 
-    public ArrayList<BoardBean> getPostList(String dest) throws SQLException {
+    public ArrayList<BoardBean> getPostList(String dest, String lectureName) throws SQLException {
         //set query, get result set
         String sql = "";
-        if(dest.equals("lecture")) sql = "select * from board order by b_index desc";
+        //set query by dest
+        if (dest.equals("lecture")) sql = "select * from board order by b_index desc";
         else if (dest.equals("free")) sql = "";
         ResultSet rs = openConnection().executeQuery(sql);
         ArrayList<BoardBean> postList = new ArrayList<BoardBean>();
@@ -81,7 +82,6 @@ public class BoardDao extends CommonDao {
 
     public void deletePost(String index) throws SQLException {
         String sql = "delete from board where b_index = " + index;
-
         openConnection().executeUpdate(sql);
 
         closeConnection();
@@ -89,9 +89,21 @@ public class BoardDao extends CommonDao {
 
     public void updateView(BoardBean post) throws SQLException {
         String sql = "update board set b_view=" + post.getView() + " where b_index=" + post.getIndex();
-
         openConnection().executeUpdate(sql);
 
         closeConnection();
+    }
+
+    public ArrayList<String> getLectureList(String id) throws SQLException {
+        String sql = "";
+        ResultSet rs = openConnection().executeQuery(sql);
+
+        //declare lectureList
+        ArrayList<String> lectureList = new ArrayList<String>();
+        while (rs.next()) {
+            lectureList.add(rs.getString("lectureName"));
+        }
+
+        return lectureList;
     }
 }
