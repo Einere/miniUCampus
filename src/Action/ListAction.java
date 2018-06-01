@@ -22,7 +22,7 @@ public class ListAction implements CommandAction {
 
         }
 
-        //check lecture or free
+        //get post list by dest
         String dest = request.getSession().getAttribute("dest").toString();
         ArrayList<BoardBean> postList = BoardDao.getInstance().getPostList(dest);
         request.setAttribute("postList", postList);

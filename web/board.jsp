@@ -26,6 +26,14 @@
     <link rel="stylesheet" type="text/css" href="css/layer_button.css"/>
 </head>
 <body>
+<div>
+    <label>lecture : </label>
+    <select name="lectures" id="">
+        <c:forEach items="${lectureList}" var="lecture">
+            <option value="${lecture.name}">${lecture.name}</option>
+        </c:forEach>
+    </select>
+</div>
 <div align="center">
     <div>
         <h1>lecture</h1>

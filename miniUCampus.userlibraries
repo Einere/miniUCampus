@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<eclipse-userlibraries>
+  <library name="cos">
+    <archive path="C:/Users/HJ/IdeaProjects/miniUCampus/web/WEB-INF/lib/cos.jar" />
+    <archive path="C:/Users/HJ/IdeaProjects/miniUCampus/web/WEB-INF/lib/mysql-connector-java-5.1.46-bin.jar" />
+    <archive path="C:/Users/HJ/IdeaProjects/miniUCampus/web/WEB-INF/lib/jstl-1.2.jar" />
+  </library>
+</eclipse-userlibraries>
+
