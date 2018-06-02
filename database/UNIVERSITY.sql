@@ -49,6 +49,7 @@ ENGINE = InnoDB;
 
 CREATE TABLE IF NOT EXISTS `UNIVERSITY`.`COURSE` (
   `CNumber` VARCHAR(15) NOT NULL,
+  `Semester` VARCHAR(5) NOT NULL,
   `CName` VARCHAR(45) NULL,
   `Professor_number` VARCHAR(45) NULL,
   PRIMARY KEY (`CNumber`),
@@ -88,7 +89,6 @@ ENGINE = InnoDB;
 
 CREATE TABLE IF NOT EXISTS `UNIVERSITY`.`POST` (
   `PNumber` INT NOT NULL,
-  `Post_number_on_a_board` INT NULL,
   `Category_number` INT NULL,
   `Author_number` VARCHAR(15) NULL,
   `Title` VARCHAR(45) NULL,
