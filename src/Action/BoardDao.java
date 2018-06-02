@@ -7,6 +7,7 @@ import java.util.ArrayList;
 import java.sql.*;
 
 import Beans.BoardBean;
+import Beans.StudentBean;
 
 import java.sql.*;
 
@@ -17,14 +18,13 @@ public class BoardDao extends CommonDao {
     }
 
     public ArrayList<BoardBean> getPostList(String dest, String lectureName) throws SQLException {
-        //set query, get result set
+        //set query by dest, get result set, get result set
         String sql = "";
-        //set query by dest
         if (dest.equals("lecture")) sql = "select * from board order by b_index desc";
         else if (dest.equals("free")) sql = "";
         ResultSet rs = openConnection().executeQuery(sql);
-        ArrayList<BoardBean> postList = new ArrayList<BoardBean>();
 
+        ArrayList<BoardBean> postList = new ArrayList<BoardBean>();
         while (rs.next()) {
             BoardBean post = new BoardBean();
             post.setIndex(rs.getInt("b_index"));
@@ -39,11 +39,31 @@ public class BoardDao extends CommonDao {
         return postList;
     }
 
-    public BoardBean getPost(String index) throws SQLException {
+    public ArrayList<StudentBean> getStudentList(String professorId, String lectureName) throws SQLException {
+        //set query by prefessor id, lecture name, get result set
+        String sql = "";
+        ResultSet rs = openConnection().executeQuery(sql);
+
+        ArrayList<StudentBean> studentList = new ArrayList<StudentBean>();
+        while(rs.next()){
+            StudentBean student = new StudentBean();
+            student.setsNumber(rs.getString("SNumber"));
+            student.setMajor_number(rs.getString("Major_number"));
+            student.setsYear(rs.getInt("SYear"));
+            student.setEmail(rs.getString("Email"));
+            student.setsGender(rs.getString("SGender"));
+            student.setPhone_number(rs.getString("Phone_number"));
+        }
+
+        return studentList;
+    }
+
+    public BoardBean getPost(String dest, String lectureName, String index) throws SQLException {
+        //set query by dest, get result set
         String sql = "select * from board where b_index = " + index;
         ResultSet rs = openConnection().executeQuery(sql);
-        BoardBean post = new BoardBean();
 
+        BoardBean post = new BoardBean();
         while (rs.next()) {
             post.setIndex(rs.getInt("b_index"));
             post.setTitle(rs.getString("b_title"));
@@ -58,7 +78,7 @@ public class BoardDao extends CommonDao {
         return post;
     }
 
-    public void addPost(BoardBean post) throws SQLException {
+    public void addPost(String dest, String lectureName, BoardBean post) throws SQLException {
         SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
 
         String sql = "select count(*) from board";

@@ -4,15 +4,20 @@ import Beans.BoardBean;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 public class CountAction implements CommandAction {
 
     @Override
     public String requestPro(HttpServletRequest request, HttpServletResponse response) throws Throwable {
-        //get index, post, ip
         request.setCharacterEncoding("utf-8");
+
+        //get session, dest, lectureName, index, post, ip
+        HttpSession session = request.getSession();
+        String dest = session.getAttribute("dest").toString();
+        String lectureName = session.getAttribute("lectureName").toString();
         String index = request.getParameter("index");
-        BoardBean post = BoardDao.getInstance().getPost(index);
+        BoardBean post = BoardDao.getInstance().getPost(dest, lectureName, index);
         String ip = request.getRemoteAddr();
 
         if(!ip.equals(post.getIp())){

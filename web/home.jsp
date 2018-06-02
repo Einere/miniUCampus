@@ -15,19 +15,15 @@
             window.location.href="list.do?dest=lecture";
         }
         function free(){
-            window.location.href="list.do?dest=lecture";
+            window.location.href="list.do?dest=free";
         }
-
-        $(document).ready(function(){
-
-        });
     </script>
 </head>
 <body>
 <button onclick="lecture()">lecture</button>
 <button onclick="free()">free</button>
 <c:if test="${identity eq 'professor'}">
-    <button>student</button>
+    <button onclick="window.location.href='student.do'">student</button>
 </c:if>
 </body>
 </html>

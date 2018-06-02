@@ -10,9 +10,13 @@ public class DetailAction implements CommandAction {
     @Override
     public String requestPro(HttpServletRequest request, HttpServletResponse response) throws Throwable {
         request.setCharacterEncoding("utf-8");
-        String paraIndex = request.getParameter("index");
-        BoardBean post = BoardDao.getInstance().getPost(paraIndex);
 
+        //get dest, lectureName, index
+        String dest = request.getSession().getAttribute("dest").toString();
+        String lectureName = request.getSession().getAttribute("lectureName").toString();
+        String index = request.getParameter("index");
+
+        BoardBean post = BoardDao.getInstance().getPost(dest, lectureName, index);
         request.setAttribute("index", post.getIndex());
         request.setAttribute("title", post.getTitle());
         request.setAttribute("writer", post.getWriter());

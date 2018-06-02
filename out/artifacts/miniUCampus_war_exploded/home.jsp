@@ -15,12 +15,8 @@
             window.location.href="list.do?dest=lecture";
         }
         function free(){
-            window.location.href="list.do?dest=lecture";
+            window.location.href="list.do?dest=free";
         }
-
-        $(document).ready(function(){
-
-        });
     </script>
 </head>
 <body>

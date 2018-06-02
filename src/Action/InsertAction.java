@@ -5,10 +5,7 @@ import Beans.BoardBean;
 import javax.servlet.ServletContext;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import java.text.*;
 import java.sql.*;
-import java.io.File;
-import java.io.IOException;
 
 import com.oreilly.servlet.MultipartRequest;
 import com.oreilly.servlet.multipart.DefaultFileRenamePolicy;
@@ -18,6 +15,11 @@ public class InsertAction implements CommandAction {
     public String requestPro(HttpServletRequest request, HttpServletResponse response) throws Throwable {
         request.setCharacterEncoding("utf-8");
 
+        //get dest, lectureName
+        String dest = request.getSession().getAttribute("dest").toString();
+        String lectureName = request.getSession().getAttribute("lectureName").toString();
+
+        //get file size, path
         MultipartRequest multi = null;
         int fileMaxSize = 10 * 1024 * 1024;
         String filePath = request.getSession().getServletContext().getRealPath("/upload");
@@ -39,7 +41,7 @@ public class InsertAction implements CommandAction {
         post.setContent(multi.getParameter("content"));
         post.setIp(request.getRemoteAddr());
         post.setFile(fileName);
-        BoardDao.getInstance().addPost(post);
+        BoardDao.getInstance().addPost(dest, lectureName, post);
 
         return "insert.jsp";
     }
