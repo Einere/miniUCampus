@@ -6,6 +6,7 @@ import com.oreilly.servlet.multipart.ExceededSizeException;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 import java.io.BufferedInputStream;
 import java.io.BufferedOutputStream;
 import java.io.File;
@@ -20,8 +21,11 @@ public class DownloadAction implements CommandAction {
         request.setCharacterEncoding("utf-8");
 
         //get file object
+        HttpSession session = request.getSession();
+        String dest = session.getAttribute("dest").toString();
+        String lectureName = session.getAttribute("lectureName").toString();
         String index = request.getParameter("index");
-        BoardBean post = BoardDao.getInstance().getPost(index);
+        BoardBean post = BoardDao.getInstance().getPost(dest, lectureName, index);
         String fileName = post.getFile();
         String filePath = request.getSession().getServletContext().getRealPath("/upload") + "/" + fileName;
         File file = new File(filePath);

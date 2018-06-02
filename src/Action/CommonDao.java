@@ -4,7 +4,7 @@ import java.sql.*;
 
 public class CommonDao {
     private final String driverName = "com.mysql.jdbc.Driver"; //DB driver
-    private final String url = "jdbc:mysql://localhost:3306/lecture?useSSL=false"; //DB url
+    private final String url = "jdbc:mysql://localhost:3306/university?useSSL=false"; //DB url
     private final String id = "root";
     private final String pw = "1234";
     private Connection con=null;

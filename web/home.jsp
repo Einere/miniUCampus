@@ -25,5 +25,9 @@
 <c:if test="${identity eq 'professor'}">
     <button onclick="window.location.href='student.do'">student</button>
 </c:if>
+<button onclick="window.location.href='signout.do'">sign out</button>
+<div>
+    <span>welcome, ${identity} ${id}</span>
+</div>
 </body>
 </html>
