@@ -39,7 +39,8 @@
                 return false;
             }
         }
-        window.onload = function(){
+
+        window.onload = function () {
             let date = document.getElementsByName("date")[0];
             date.value = new Date().toISOString().split('T')[0];
         }
@@ -51,29 +52,29 @@
     <form action="insert.do" method="post" enctype="multipart/form-data" onsubmit="return formCheck();">
         <table>
             <tr>
-                <td>title : </td>
+                <td>title :</td>
                 <td><input type="text" name="title"></td>
             </tr>
             <tr>
-                <td>writer : </td>
+                <td>writer :</td>
                 <td><input type="text" name="writer"></td>
             </tr>
             <tr>
-                <td>date : </td>
+                <td>date :</td>
                 <td><input type="text" name="date"></td>
             </tr>
             <tr>
-                <td>content : </td>
+                <td>content :</td>
                 <td><textarea rows="10" cols="20" name="content"></textarea></td>
             </tr>
             <tr>
-                <td>file : </td>
+                <td>file :</td>
                 <td><input type="file" name="fileName"></td>
             </tr>
         </table>
         <input type="submit" value="post"/>
     </form>
-    <button onclick="window.location.href='lecture.do'">back to board</button>
+    <button onclick="window.location.href='list.do'">back to board</button>
 </div>
 </body>
 </html>

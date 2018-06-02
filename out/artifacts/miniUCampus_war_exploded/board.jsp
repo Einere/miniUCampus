@@ -62,8 +62,7 @@
                             <c:forEach items="${postList}" var="post">
                                 <tr class="row100 body">
                                     <td class="cell100 column1">${post.index}</td>
-                                    <td class="cell100 column2"
-                                        onclick="window.location.href='count.do?index=${post.index}'">${post.title}</td>
+                                    <td class="cell100 column2" onclick="window.location.href='count.do?index=${post.index}'">${post.title}</td>
                                     <td class="cell100 column3">${post.writer}</td>
                                     <td class="cell100 column4">${post.date}</td>
                                     <td class="cell100 column5">${post.view}</td>

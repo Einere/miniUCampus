@@ -27,7 +27,7 @@
 </c:if>
 <button onclick="window.location.href='signout.do'">sign out</button>
 <div>
-    <span>welcome, ${identity} ${id}</span>
+    <span>welcome, ${identity}, ${id}, ${name}</span>
 </div>
 </body>
 </html>

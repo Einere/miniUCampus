@@ -18,21 +18,29 @@ public class BoardDao extends CommonDao {
     }
 
     public ArrayList<BoardBean> getPostList(String dest, String lectureName) throws SQLException {
-        //set query by dest, get result set, get result set
-        String sql = "";
-        if (dest.equals("lecture")) sql = "select * from board order by b_index desc";
-        else if (dest.equals("free")) sql = "";
-        ResultSet rs = openConnection().executeQuery(sql);
+        //set query by dest, get result set
+        String sql = "select POST.PNumber, Title, PERSON.PName as Writer, PDate, View_count, Contents "
+                + "from POST, PERSON, COURSE, Student_take_course "
+                + "where (Category_number=(select CNumber from post_category where CName=?) "
+                + "and (Course_number=(SELECT CNumber FROM COURSE WHERE COURSE.CName=?) "
+                + "OR (Course_number=null)))"
+                + "and Course_number=(select CNumber from COURSE where CName=?) "
+                + "and Author_number=PERSON.PNumber";
+        PreparedStatement pstmt = openConnection().prepareStatement(sql);
+        pstmt.setString(1, dest);
+        pstmt.setString(2, lectureName);
+        pstmt.setString(3, lectureName);
+        ResultSet rs = pstmt.executeQuery();
 
         ArrayList<BoardBean> postList = new ArrayList<BoardBean>();
         while (rs.next()) {
             BoardBean post = new BoardBean();
-            post.setIndex(rs.getInt("b_index"));
-            post.setTitle(rs.getString("b_title"));
-            post.setWriter(rs.getString("b_writer"));
-            post.setDate(rs.getDate("b_date"));
-            post.setView(rs.getInt("b_view"));
-            post.setContent(rs.getString("b_content"));
+            post.setIndex(rs.getInt("POST.PNumber"));
+            post.setTitle(rs.getString("Title"));
+            post.setWriter(rs.getString("PERSON.PName"));
+            post.setDate(rs.getDate("PDate"));
+            post.setView(rs.getInt("View_count"));
+            post.setContent(rs.getString("Content"));
             postList.add(post);
         }
         closeConnection();
@@ -40,12 +48,21 @@ public class BoardDao extends CommonDao {
     }
 
     public ArrayList<StudentBean> getStudentList(String professorId, String lectureName) throws SQLException {
-        //set query by prefessor id, lecture name, get result set
-        String sql = "";
-        ResultSet rs = openConnection().executeQuery(sql);
+        //set query by professor id, lecture name, get result set
+        String sql = "SELECT PName " +
+                "FROM PERSON " +
+                "WHERE PERSON.PNumber " +
+                "IN (SELECT Student_number " +
+                "    FROM Student_take_course " +
+                "    WHERE Course_number = (SELECT CNumber FROM COURSE " +
+                "        WHERE CName=? AND Professor_number=?));";
+        PreparedStatement pstmt = openConnection().prepareStatement(sql);
+        pstmt.setString(1, lectureName);
+        pstmt.setString(2, professorId);
+        ResultSet rs = pstmt.executeQuery();
 
         ArrayList<StudentBean> studentList = new ArrayList<StudentBean>();
-        while(rs.next()){
+        while (rs.next()) {
             StudentBean student = new StudentBean();
             student.setsNumber(rs.getString("SNumber"));
             student.setMajor_number(rs.getString("Major_number"));
@@ -60,19 +77,28 @@ public class BoardDao extends CommonDao {
 
     public BoardBean getPost(String dest, String lectureName, String index) throws SQLException {
         //set query by dest, get result set
-        String sql = "select * from board where b_index = " + index;
-        ResultSet rs = openConnection().executeQuery(sql);
+        String sql = "select POST.PNumber, Title, PERSON.PName as Writer, PDate, View_count, Contents, File_name "
+                + "from POST, PERSON, COURSE "
+                + "where POST.PNumber=? "
+                + "and Category_number=(select CNumber from post_category where CName=?) "
+                + "and (Course_number=(SELECT CNumber FROM COURSE WHERE COURSE.CName=?) "
+                + "    OR (Course_number=null)) "
+                + "and Author_number=PERSON.PNumber";
+        PreparedStatement pstmt = openConnection().prepareStatement(sql);
+        pstmt.setString(1, index);
+        pstmt.setString(2, dest);
+        pstmt.setString(3, lectureName);
+        ResultSet rs = pstmt.executeQuery();
 
         BoardBean post = new BoardBean();
         while (rs.next()) {
-            post.setIndex(rs.getInt("b_index"));
-            post.setTitle(rs.getString("b_title"));
-            post.setWriter(rs.getString("b_writer"));
-            post.setDate(rs.getDate("b_date"));
-            post.setView(rs.getInt("b_view"));
-            post.setContent(rs.getString("b_content"));
-            post.setFile(rs.getString("b_file"));
-            post.setIp(rs.getString("b_ip"));
+            post.setIndex(rs.getInt("POST.PNumber"));
+            post.setTitle(rs.getString("Title"));
+            post.setWriter(rs.getString("PERSON.PName"));
+            post.setDate(rs.getDate("PDate"));
+            post.setView(rs.getInt("View_count"));
+            post.setContent(rs.getString("Content"));
+            post.setFile(rs.getString("File_name"));
         }
         closeConnection();
         return post;
@@ -82,7 +108,9 @@ public class BoardDao extends CommonDao {
         SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
 
         String sql = "select count(*) from board";
-        ResultSet rs = openConnection().executeQuery(sql);
+        PreparedStatement pstmt = openConnection().prepareStatement(sql);
+        ResultSet rs = pstmt.executeQuery();
+
         rs.next();
         int index = rs.getInt(1) + 1; //column name = count(*)..? anyway, recommend to use column index 1
         String title = post.getTitle();
@@ -95,33 +123,52 @@ public class BoardDao extends CommonDao {
 
         sql = "INSERT INTO board (b_index, b_title, b_writer, b_date, b_view, b_content, b_file, b_ip)"
                 + " VALUES (" + index + ", '" + title + "', '" + writer + "', '" + sdf.format(date) + "', " + view + ", '" + content + "', '" + fileName + "', '" + ip + "')";
-        openConnection().executeUpdate(sql);
+        pstmt = openConnection().prepareStatement(sql);
+        pstmt.executeUpdate();
 
         closeConnection();
     }
 
     public void deletePost(String index) throws SQLException {
-        String sql = "delete from board where b_index = " + index;
-        openConnection().executeUpdate(sql);
+        //set query by index
+        String sql = "DELETE FROM POST WHERE PNumber=?";
+        PreparedStatement pstmt = openConnection().prepareStatement(sql);
+        pstmt.setString(1, index);
+        pstmt.executeUpdate();
 
         closeConnection();
     }
 
     public void updateView(BoardBean post) throws SQLException {
-        String sql = "update board set b_view=" + post.getView() + " where b_index=" + post.getIndex();
-        openConnection().executeUpdate(sql);
+        String sql = "UPDATE TABLE POST SET View_count=? WHERE PNumber=?";
+        PreparedStatement pstmt = openConnection().prepareStatement(sql);
+        pstmt.setInt(1, post.getView());
+        pstmt.setInt(2, post.getIndex());
+        pstmt.executeUpdate();
 
         closeConnection();
     }
 
     public ArrayList<String> getLectureList(String id) throws SQLException {
-        String sql = "";
-        ResultSet rs = openConnection().executeQuery(sql);
+        //set query by id, get result set
+        String sql = "SELECT COURSE.CName FROM COURSE " +
+                "WHERE COURSE.CNumber " +
+                "IN (SELECT Course_number " +
+                "    FROM Student_take_course" +
+                "    WHERE Student_number=?) " +
+                "UNION " +
+                "   SELECT COURSE.CName " +
+                "   FROM COURSE " +
+                "   WHERE Professor_number=?";
+        PreparedStatement pstmt = openConnection().prepareStatement(sql);
+        pstmt.setString(1, id);
+        pstmt.setString(2, id);
+        ResultSet rs = pstmt.executeQuery();
 
         //declare lectureList
         ArrayList<String> lectureList = new ArrayList<String>();
         while (rs.next()) {
-            lectureList.add(rs.getString("lectureName"));
+            lectureList.add(rs.getString("CName"));
         }
 
         return lectureList;

@@ -19,19 +19,20 @@ public class ListAction implements CommandAction {
         HttpSession session = request.getSession();
         //set dest. for choice whether lecture for free
         try{
-            //change dest
+            //set dest
             if(!request.getParameter("dest").equals(null)) session.setAttribute("dest", request.getParameter("dest"));
             if(request.getParameter("dest").equals("lecture")){
                 //get lecture list for select
                 lectureList = BoardDao.getInstance().getLectureList(session.getAttribute("id").toString());
                 //get 1st lecture name,
                 lectureName = lectureList.get(0);
+                System.out.println("at ListAction... lecture name = " + lectureName);
                 session.setAttribute("lectureName", lectureName);
             }
         }
         catch(Exception e){
             //not change dest
-
+            e.printStackTrace();
         }
 
         //get post list by dest, lecture name
