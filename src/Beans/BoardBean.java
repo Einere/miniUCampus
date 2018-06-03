@@ -5,16 +5,30 @@ import java.util.List;
 
 public class BoardBean {
     private int index;
+    private int category_number;
     private String title;
     private String writer;
     private Date date;
     private int view;
     private String content;
-    private String ip;
     private int fileCount;
-    private List<String> files; //다중 파일 업로드
     private String file;
 
+    public void setCategory_number(int category_number) {
+        this.category_number = category_number;
+    }
+
+    public void setFileCount(int fileCount) {
+        this.fileCount = fileCount;
+    }
+
+    public int getCategory_number() {
+        return category_number;
+    }
+
+    public int getFileCount() {
+        return fileCount;
+    }
 
     public int getIndex() {
         return index;
@@ -64,24 +78,12 @@ public class BoardBean {
         this.content = content;
     }
 
-    public void setIp(String ip) { this.ip = ip; }
-
-    public String getIp(){ return ip; }
-
     public int getFilecount() {
         return fileCount;
     }
 
     public void setFilecount(int fileCount) {
         this.fileCount = fileCount;
-    }
-
-    public List<String> getFiles() {
-        return files;
-    }
-
-    public void setFiles(List<String> files) {
-        this.files = files;
     }
 
     public String getFile() {

@@ -3,10 +3,10 @@ package Beans;
 public class StudentBean {
     private String sNumber;
     private String Major_number;
-    private int sYear;
+    private int SYear;
     private String Email;
-    private String sGender;
-    private String phone_number;
+    private String SGender;
+    private String Phone_number;
 
     public void setsNumber(String sNumber) {
         this.sNumber = sNumber;
@@ -17,7 +17,7 @@ public class StudentBean {
     }
 
     public void setsYear(int sYear) {
-        this.sYear = sYear;
+        this.SYear = sYear;
     }
 
     public void setEmail(String email) {
@@ -25,11 +25,11 @@ public class StudentBean {
     }
 
     public void setsGender(String sGender) {
-        this.sGender = sGender;
+        this.SGender = sGender;
     }
 
     public void setPhone_number(String phone_number) {
-        this.phone_number = phone_number;
+        this.Phone_number = phone_number;
     }
 
     public String getsNumber() {
@@ -42,7 +42,7 @@ public class StudentBean {
     }
 
     public int getsYear() {
-        return sYear;
+        return SYear;
     }
 
     public String getEmail() {
@@ -50,10 +50,10 @@ public class StudentBean {
     }
 
     public String getsGender() {
-        return sGender;
+        return SGender;
     }
 
     public String getPhone_number() {
-        return phone_number;
+        return Phone_number;
     }
 }

@@ -53,11 +53,11 @@
                             <c:forEach items="${studentList}" var="student">
                                 <tr class="row100 body" onclick="window.location.href=''">
                                     <td class="cell100 column1">${student.sNumber}</td>
-                                    <td class="cell100 column2">${student.Magor_number}</td>
-                                    <td class="cell100 column3">${student.sYear}</td>
+                                    <td class="cell100 column2">${student.Major_number}</td>
+                                    <td class="cell100 column3">${student.SYear}</td>
                                     <td class="cell100 column4">${student.Email}</td>
-                                    <td class="cell100 column5">${student.sGender}</td>
-                                    <td class="cell100 column5">${student.phone_Number}</td>
+                                    <td class="cell100 column5">${student.SGender}</td>
+                                    <td class="cell100 column5">${student.Phone_Number}</td>
                                 </tr>
                             </c:forEach>
                             </tbody>
@@ -84,6 +84,7 @@
     });
 
     function search() {
+        //get serach id
         let searchId = $("#search").val();
 
         //reset tbody

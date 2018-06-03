@@ -19,14 +19,14 @@ public class BoardDao extends CommonDao {
 
     public ArrayList<BoardBean> getPostList(String dest, String lectureName) throws SQLException {
         //set query by dest, get result set
-        String sql = "SELECT DISTINCT POST.PNumber, Title, PERSON.PName AS Writer, PDate, View_count, Contents " +
+        String sql = "SELECT DISTINCT POST.PNumber, Category_number, Title, PERSON.PName AS Writer, PDate, View_count, Contents, File_name " +
                 "FROM POST, PERSON, COURSE, Student_take_course " +
-                "WHERE (Category_number = ( " +
-                "    SELECT CNumber FROM post_category WHERE CName = ? " +
-                "    AND (Course_number = ( " +
-                "        SELECT CNumber FROM COURSE WHERE COURSE.CName = ?) " +
-                "        OR (Course_number = null)))) " +
-                "AND Author_number = PERSON.PNumber " +
+                "WHERE Category_number = ( " +
+                "    SELECT CNumber FROM post_category " +
+                "    WHERE CName = ? " +
+                "        AND (Course_number = (SELECT CNumber FROM COURSE WHERE COURSE.CName = ?) " +
+                "        OR (Course_number IS NULL))) " +
+                "    AND POST.Author_number = PERSON.PNumber " +
                 "ORDER BY POST.PNumber DESC";
         PreparedStatement pstmt = openConnection().prepareStatement(sql);
         pstmt.setString(1, dest);
@@ -37,11 +37,13 @@ public class BoardDao extends CommonDao {
         while (rs.next()) {
             BoardBean post = new BoardBean();
             post.setIndex(rs.getInt("POST.PNumber"));
+            post.setCategory_number(rs.getInt("Category_number"));
             post.setTitle(rs.getString("Title"));
             post.setWriter(rs.getString("Writer"));
             post.setDate(rs.getDate("PDate"));
             post.setView(rs.getInt("View_count"));
             post.setContent(rs.getString("Contents"));
+            post.setFile(rs.getString("File_name"));
             postList.add(post);
         }
         closeConnection();
@@ -50,10 +52,9 @@ public class BoardDao extends CommonDao {
 
     public ArrayList<StudentBean> getStudentList(String professorId, String lectureName) throws SQLException {
         //set query by professor id, lecture name, get result set
-        String sql = "SELECT PName " +
-                "FROM PERSON " +
-                "WHERE PERSON.PNumber " +
-                "IN (SELECT Student_number " +
+        String sql = "SELECT * " +
+                "FROM STUDENT " +
+                "WHERE STUDENT.SNumber IN (SELECT Student_number " +
                 "    FROM Student_take_course " +
                 "    WHERE Course_number = (SELECT CNumber FROM COURSE " +
                 "        WHERE CName=? AND Professor_number=?))";
@@ -78,23 +79,28 @@ public class BoardDao extends CommonDao {
 
     public BoardBean getPost(String dest, String lectureName, String index) throws SQLException {
         //set query by dest, get result set
-        String sql = "select POST.PNumber, Title, PERSON.PName as Writer, PDate, View_count, Contents, File_name "
-                + "from POST, PERSON, COURSE "
-                + "where POST.PNumber = ? "
-                + "and (Category_number=(select CNumber from post_category where CName=? and "
-                + "(Course_number=(SELECT CNumber FROM COURSE WHERE COURSE.CName = ?) "
-                + "OR (Course_number=null) ))) "
-                + "and Author_number=PERSON.PNumber";
+        String sql = "SELECT POST.PNumber, Category_number, Title, PERSON.PName AS Writer, PDate, View_count, Contents, File_name " +
+                "FROM POST, PERSON, COURSE " +
+                "WHERE POST.PNumber = ? " +
+                "AND (Category_number = ( " +
+                "    SELECT CNumber FROM post_category WHERE CName = ?" +
+                "    AND " +
+                "    (Course_number = (SELECT CNumber FROM COURSE WHERE COURSE.CName = ?) " +
+                "    OR (Course_number IS NULL)))) " +
+                "    AND POST.PNumber = ? " +
+                "AND Author_number = PERSON.PNumber";
 
         PreparedStatement pstmt = openConnection().prepareStatement(sql);
         pstmt.setString(1, index);
         pstmt.setString(2, dest);
         pstmt.setString(3, lectureName);
+        pstmt.setString(4, index);
         ResultSet rs = pstmt.executeQuery();
 
         BoardBean post = new BoardBean();
         while (rs.next()) {
             post.setIndex(rs.getInt("POST.PNumber"));
+            post.setCategory_number(rs.getInt("Category_number"));
             post.setTitle(rs.getString("Title"));
             post.setWriter(rs.getString("Writer"));
             post.setDate(rs.getDate("PDate"));
@@ -108,27 +114,27 @@ public class BoardDao extends CommonDao {
 
     public void addPost(String dest, String lectureName, BoardBean post) throws SQLException {
         SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
-
+        System.out.println("in BoardDao.. dest = " + dest);
+        System.out.println("in BoardDao.. lectureName = " + lectureName);
         //get index
-        String sql = "select PNumber from post";
+        String sql = "select PNumber from post order by PNumber desc ";
         PreparedStatement pstmt = openConnection().prepareStatement(sql);
         ResultSet rs = pstmt.executeQuery();
         rs.next();
         int index = rs.getInt(1) + 1; //column name = count(*)..? anyway, recommend to use column index 1
-
+        System.out.println("in BoardDao.. index = " + index);
         //get category_number
         sql = "select CNumber from post_category " +
-                "where " +
-                "    CName = ? " +
-                "    and " +
-                "    Course_number = (select CNumber from course where CName = ?)";
+                "where CName = ? " +
+                "    AND (Course_number = (SELECT CNumber FROM COURSE WHERE COURSE.CName = ?) " +
+                "        OR (Course_number is NULL));";
         pstmt = openConnection().prepareStatement(sql);
         pstmt.setString(1, dest);
         pstmt.setString(2, lectureName);
         rs = pstmt.executeQuery();
         rs.next();
         int category_number = rs.getInt(1);
-
+        System.out.println("in BoardDao.. category_number = " + category_number);
         String title = post.getTitle();
         String writer = post.getWriter();
         Date date = post.getDate();
@@ -147,6 +153,7 @@ public class BoardDao extends CommonDao {
         pstmt.setString(6, fileName);
         pstmt.setDate(7, date);
         pstmt.setInt(8, view);
+        pstmt.executeUpdate();
 
         closeConnection();
     }

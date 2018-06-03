@@ -12,22 +12,19 @@ public class CountAction implements CommandAction {
     public String requestPro(HttpServletRequest request, HttpServletResponse response) throws Throwable {
         request.setCharacterEncoding("utf-8");
 
-        //get session, dest, lectureName, index, post, ip
+        //get id, dest, lectureName, index, post, ip
         HttpSession session = request.getSession();
+        String name = session.getAttribute("name").toString();
         String dest = session.getAttribute("dest").toString();
         String lectureName = session.getAttribute("lectureName").toString();
         String index = request.getParameter("index");
         BoardBean post = BoardDao.getInstance().getPost(dest, lectureName, index);
-        String ip = request.getRemoteAddr();
-
-        if(!ip.equals(post.getIp())){
+        System.out.println("in CountAction.. post.getWriter() = " + post.getWriter());
+        if(!name.equals(post.getWriter())){
             //update post
             int view = post.getView();
             post.setView(++view);
             BoardDao.getInstance().updateView(post);
-
-            System.out.println(ip);
-            System.out.println(post.getIp());
         }
         request.setAttribute("index", index);
         return "redirectToDetail.jsp";

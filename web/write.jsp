@@ -23,19 +23,9 @@
                 document.forms[0].title.focus();    // 해당태그에 포커스를 준뒤
                 return false;                       // false를 리턴합니다.
             }
-            if (writer == null || writer === "") {
-                alert('작성자를 입력하세요');
-                document.forms[0].writer.focus();
-                return false;
-            }
             if (content == null || content === "") {
                 alert('내용을 입력하세요');
                 document.forms[0].content.focus();
-                return false;
-            }
-            if (date == null || date === "") {
-                alert('날짜를 입력하세요');
-                document.forms[0].date.focus();
                 return false;
             }
         }
@@ -55,11 +45,7 @@
                 <td>title :</td>
                 <td><input type="text" name="title"></td>
             </tr>
-            <tr>
-                <td>writer :</td>
-                <td><input type="text" name="writer"></td>
-            </tr>
-            <tr>
+            <tr style="display: none">
                 <td>date :</td>
                 <td><input type="text" name="date"></td>
             </tr>
