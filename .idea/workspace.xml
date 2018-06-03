@@ -7,23 +7,15 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="4309f240-e892-4157-87b2-823ace24e096" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/miniUCampus_war_exploded/WEB-INF/classes/Action/ListAction.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/miniUCampus_war_exploded/WEB-INF/classes/Action/ListAction.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/miniUCampus_war_exploded/css/layer_button.css" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/miniUCampus_war_exploded/css/layer_button.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/miniUCampus_war_exploded/css/main.css" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/miniUCampus_war_exploded/css/main.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/miniUCampus_war_exploded/redirect.jsp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/miniUCampus/Action/BoardDao.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/miniUCampus/Action/CountAction.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/miniUCampus/Action/InsertAction.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Action/BoardDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Action/BoardDao.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Action/CountAction.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Action/CountAction.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Action/InsertAction.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Action/InsertAction.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Action/StudentAction.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Action/StudentAction.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Beans/BoardBean.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Beans/BoardBean.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Beans/StudentBean.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Beans/StudentBean.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/insert.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/web/insert.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/student.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/web/student.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/write.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/web/write.jsp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Action/SignoutAction.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Action/redirectToHome.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/miniUCampus_war_exploded/WEB-INF/classes/Action/BoardDao.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/miniUCampus_war_exploded/WEB-INF/classes/Action/BoardDao.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/miniUCampus_war_exploded/WEB-INF/classes/Action/CountAction.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/miniUCampus_war_exploded/WEB-INF/classes/Action/CountAction.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/miniUCampus_war_exploded/WEB-INF/classes/Action/InsertAction.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/miniUCampus_war_exploded/WEB-INF/classes/Action/InsertAction.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/miniUCampus_war_exploded/WEB-INF/classes/Beans/BoardBean.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/miniUCampus_war_exploded/WEB-INF/classes/Beans/BoardBean.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/miniUCampus_war_exploded/insert.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/miniUCampus_war_exploded/insert.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/miniUCampus_war_exploded/write.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/miniUCampus_war_exploded/write.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/miniUCampus/Beans/BoardBean.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/miniUCampus/Beans/BoardBean.class" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -145,8 +137,8 @@
       <file leaf-file-name="CountAction.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/Action/CountAction.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="378">
-              <caret line="21" column="84" selection-start-line="21" selection-start-column="84" selection-end-line="21" selection-end-column="84" />
+            <state relative-caret-position="576">
+              <caret line="32" lean-forward="true" selection-start-line="32" selection-end-line="32" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -627,7 +619,7 @@
       <workItem from="1527826277769" duration="7540000" />
       <workItem from="1527836428202" duration="15040000" />
       <workItem from="1527915455941" duration="39334000" />
-      <workItem from="1528007008084" duration="23620000" />
+      <workItem from="1528007008084" duration="23869000" />
     </task>
     <task id="LOCAL-00001" summary="Modify home.jsp, actions.">
       <created>1527857081407</created>
@@ -664,11 +656,18 @@
       <option name="project" value="LOCAL" />
       <updated>1528019692497</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="Implement board (write, counting view...)">
+      <created>1528033776109</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1528033776109</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="201957000" />
+    <option name="totallyTimeSpent" value="202206000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -681,7 +680,6 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1096" extended-state="6" />
-    <editor active="true" />
     <layout>
       <window_info anchor="right" id="Palette" order="3" />
       <window_info anchor="bottom" id="Event Log" order="13" sideWeight="0.5042644" side_tool="true" weight="0.3322884" />
@@ -701,10 +699,10 @@
       <window_info id="Image Layers" order="3" />
       <window_info anchor="bottom" id="Java Enterprise" order="10" weight="0.32985386" />
       <window_info anchor="right" id="Capture Analysis" order="4" />
-      <window_info anchor="bottom" id="Version Control" order="12" sideWeight="0.4978678" weight="0.3291536" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" sideWeight="0.49573562" visible="true" weight="0.3322884" />
+      <window_info anchor="bottom" id="Version Control" order="12" sideWeight="0.4978678" visible="true" weight="0.3291536" />
+      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.49573562" weight="0.3322884" />
       <window_info anchor="bottom" id="Terminal" order="8" sideWeight="0.49946696" weight="0.33019853" />
-      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.48513302" visible="true" weight="0.15938166" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.48513302" visible="true" weight="0.15938166" />
       <window_info id="Web" order="6" sideWeight="0.514867" side_tool="true" weight="0.15298508" />
       <window_info anchor="right" id="Theme Preview" order="7" />
       <window_info id="Favorites" order="5" side_tool="true" />
@@ -754,7 +752,8 @@
     <MESSAGE value="Implement sign in" />
     <MESSAGE value="Implement query... need to check it works" />
     <MESSAGE value="Implement listAction except free board" />
-    <option name="LAST_COMMIT_MESSAGE" value="Implement listAction except free board" />
+    <MESSAGE value="Implement board (write, counting view...)" />
+    <option name="LAST_COMMIT_MESSAGE" value="Implement board (write, counting view...)" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1087,8 +1086,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Action/CountAction.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="378">
-          <caret line="21" column="84" selection-start-line="21" selection-start-column="84" selection-end-line="21" selection-end-column="84" />
+        <state relative-caret-position="576">
+          <caret line="32" lean-forward="true" selection-start-line="32" selection-end-line="32" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>

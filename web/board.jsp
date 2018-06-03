@@ -76,7 +76,7 @@
         </div>
     </div>
     <button onclick="window.location.href='write.jsp'">write</button>
-    <button onclick="window.location.href='redirectToHome.do'">back to home</button>
+    <button onclick="window.location.href='redirectToHomeAction.do'">back to home</button>
 </div>
 <script src="vendor/jquery/jquery-3.2.1.min.js"></script>
 <script src="vendor/bootstrap/js/popper.js"></script>

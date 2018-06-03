@@ -13,7 +13,7 @@
 <head>
     <title>insert</title>
     <link rel="stylesheet" type="text/css" href="css/layer_button.css"/>
-    <script>location.href = "lecture.do"</script>
+    <script>location.href = "list.do"</script>
 </head>
 <body>
 <br/>
