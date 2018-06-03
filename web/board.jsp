@@ -31,7 +31,7 @@
         <label>lecture : </label>
         <select name="lectures" id="lectures" onchange="selectChanged()">
             <c:forEach items="${lectureList}" var="lecture">
-                <option value="${lecture}">${lecture}</option>
+                <option value="${lecture}" <c:if test="${lecture eq lectureName}">selected</c:if>>${lecture}</option>
             </c:forEach>
         </select>
     </c:if>
@@ -76,6 +76,7 @@
         </div>
     </div>
     <button onclick="window.location.href='write.jsp'">write</button>
+    <button onclick="window.location.href='redirectToHome.do'">back to home</button>
 </div>
 <script src="vendor/jquery/jquery-3.2.1.min.js"></script>
 <script src="vendor/bootstrap/js/popper.js"></script>
@@ -92,7 +93,7 @@
     });
 
     function selectChanged() {
-        window.location.href = "list.do?lecture=" + $('#lectures').selectedItem;
+        window.location.href = "list.do?dest=lecture" + "&lectureName=" + $('#lectures option:selected').val();
     }
 </script>
 <script src="js/main.js"></script>

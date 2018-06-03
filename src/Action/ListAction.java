@@ -5,6 +5,7 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 import java.sql.*;
 import java.util.ArrayList;
+
 import Beans.BoardBean;
 import Action.CommandAction;
 import Action.BoardDao;
@@ -18,19 +19,23 @@ public class ListAction implements CommandAction {
 
         HttpSession session = request.getSession();
         //set dest. for choice whether lecture for free
-        try{
+        try {
             //set dest
-            if(!request.getParameter("dest").equals(null)) session.setAttribute("dest", request.getParameter("dest"));
-            if(request.getParameter("dest").equals("lecture")){
+            if (request.getParameterMap().containsKey("dest")) {
+                session.setAttribute("dest", request.getParameter("dest"));
+            }
+            if (session.getAttribute("dest").equals("lecture")) {
                 //get lecture list for select
                 lectureList = BoardDao.getInstance().getLectureList(session.getAttribute("id").toString());
-                //get 1st lecture name,
-                lectureName = lectureList.get(0);
+                //get 1st lecture name
+                if (request.getParameterMap().containsKey("lectureName")) lectureName = request.getParameter("lectureName");
+                else if(session.getAttribute("lectureName") != null) lectureName = session.getAttribute("lectureName").toString();
+                else lectureName = lectureList.get(0);
+
                 System.out.println("at ListAction... lecture name = " + lectureName);
                 session.setAttribute("lectureName", lectureName);
             }
-        }
-        catch(Exception e){
+        } catch (Exception e) {
             //not change dest
             e.printStackTrace();
         }
@@ -39,9 +44,11 @@ public class ListAction implements CommandAction {
         String dest = session.getAttribute("dest").toString();
         ArrayList<BoardBean> postList = BoardDao.getInstance().getPostList(dest, lectureName);
         //set request attr
+        request.setAttribute("dest", dest);
         request.setAttribute("postList", postList);
         request.setAttribute("lectureList", lectureList);
-        request.setAttribute("dest", dest);
+        request.setAttribute("lectureName", lectureName);
+
         return "board.jsp";
     }
 }
