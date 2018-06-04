@@ -9,7 +9,7 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <html>
 <head>
-    <title>student</title>
+    <title>Board</title>
     <link rel="icon" type="image/png" href="images/icons/favicon.ico"/>
     <link rel="stylesheet" type="text/css" href="vendor/bootstrap/css/bootstrap.min.css">
     <link rel="stylesheet" type="text/css" href="fonts/font-awesome-4.7.0/css/font-awesome.min.css">
@@ -19,12 +19,19 @@
     <link rel="stylesheet" type="text/css" href="css/util.css">
     <link rel="stylesheet" type="text/css" href="css/main.css">
     <link rel="stylesheet" type="text/css" href="css/layer_button.css"/>
-
 </head>
 <body>
 <div align="center">
-    <label>search : <input type="text" id="search"></label>
-    <button onclick="search()">search</button>
+    <div>
+        <label>id : <input type="text" id="search"/></label>
+        <button onclick="search()">search</button>
+    </div>
+    <label>lecture : </label>
+    <select name="lectures" id="lectures" onchange="selectChanged()">
+        <c:forEach items="${lectureList}" var="lecture">
+            <option value="${lecture}" <c:if test="${lecture eq lectureName}">selected</c:if>>${lecture}</option>
+        </c:forEach>
+    </select>
     <div>
         <h1>Student</h1>
     </div>
@@ -36,12 +43,12 @@
                         <table>
                             <thead>
                             <tr class="row100 head">
-                                <th class="cell100 column1">sNumber</th>
-                                <th class="cell100 column2">Major_number</th>
-                                <th class="cell100 column3">sYear</th>
-                                <th class="cell100 column4">Email</th>
-                                <th class="cell100 column5">sGender</th>
-                                <th class="cell100 column5">phone_Number</th>
+                                <th class="cell100 column1_1">sNumber</th>
+                                <th class="cell100 column2_2">Major_number</th>
+                                <th class="cell100 column3_3">sYear</th>
+                                <th class="cell100 column4_4">Email</th>
+                                <th class="cell100 column5_5">sGender</th>
+                                <th class="cell100 column6_6">phone_Number</th>
                             </tr>
                             </thead>
                         </table>
@@ -51,13 +58,13 @@
                         <table>
                             <tbody id="tbody">
                             <c:forEach items="${studentList}" var="student">
-                                <tr class="row100 body" onclick="window.location.href=''">
-                                    <td class="cell100 column1">${student.sNumber}</td>
-                                    <td class="cell100 column2">${student.Major_number}</td>
-                                    <td class="cell100 column3">${student.SYear}</td>
-                                    <td class="cell100 column4">${student.Email}</td>
-                                    <td class="cell100 column5">${student.SGender}</td>
-                                    <td class="cell100 column5">${student.Phone_Number}</td>
+                                <tr class="row100 body" onclick="">
+                                    <td class="cell100 column1_1">${student.SNumber}</td>
+                                    <td class="cell100 column2_2">${student.major_number}</td>
+                                    <td class="cell100 column3_3">${student.SYear}</td>
+                                    <td class="cell100 column4_4">${student.email}</td>
+                                    <td class="cell100 column5_5">${student.SGender}</td>
+                                    <td class="cell100 column6_6">${student.phone_number}</td>
                                 </tr>
                             </c:forEach>
                             </tbody>
@@ -67,7 +74,8 @@
             </div>
         </div>
     </div>
-    <button onclick="window.location.href=''">mail</button>
+    <button onclick="window.location.href='mail.jsp'">mail</button>
+    <button onclick="window.location.href='redirectToHomeAction.do'">back to home</button>
 </div>
 <script src="vendor/jquery/jquery-3.2.1.min.js"></script>
 <script src="vendor/bootstrap/js/popper.js"></script>
@@ -83,31 +91,20 @@
         })
     });
 
+    function selectChanged() {
+        window.location.href = "student.do?lectureName=" + $('#lectures option:selected').val();
+    }
+
     function search() {
-        //get serach id
-        let searchId = $("#search").val();
+        //get search id
+        let searchId = $('#search').val();
 
-        //reset tbody
-        let tbody = $("#tbody");
-        tbody.empty();
-
-        //set new row
-        for(let student of ${studentList}){
-            if(searchId === student.sNumber){
-                let newTr = $("<tr></tr>").props({class: "row100 body", onclick: window.location.href=''});
-                let newTd1 = $("<td></td>").props("class", "cell100 column1").val(student.sNumber);
-                let newTd2 = $("<td></td>").props("class", "cell100 column2").val(student.Major_number);
-                let newTd3 = $("<td></td>").props("class", "cell100 column3").val(student.sYear);
-                let newTd4 = $("<td></td>").props("class", "cell100 column4").val(student.Email);
-                let newTd5 = $("<td></td>").props("class", "cell100 column5").val(student.sGender);
-                let newTd6 = $("<td></td>").props("class", "cell100 column5").val(student.phone_Number);
-                newTr.appendChild(newTd1);
-                newTr.appendChild(newTd2);
-                newTr.appendChild(newTd3);
-                newTr.appendChild(newTd4);
-                newTr.appendChild(newTd5);
-                newTr.appendChild(newTd6);
-                tbody.appendChild(newTr);
+        let parent = $('.cell100.column1_1');
+        for (let child of parent) {
+            if (child.innerHTML !== "sNumber" && child.innerHTML !== searchId) {
+                let tr = child.parentElement;
+                let tbody = tr.parentElement;
+                tbody.removeChild(tr);
             }
         }
     }
@@ -115,3 +112,4 @@
 <script src="js/main.js"></script>
 </body>
 </html>
+

@@ -1,47 +1,47 @@
 package Beans;
 
 public class StudentBean {
-    private String sNumber;
+    private String SNumber;
     private String Major_number;
     private int SYear;
     private String Email;
     private String SGender;
     private String Phone_number;
 
-    public void setsNumber(String sNumber) {
-        this.sNumber = sNumber;
+    public void setSNumber(String SNumber) {
+        this.SNumber = SNumber;
     }
 
     public void setMajor_number(String major_number) {
         Major_number = major_number;
     }
 
-    public void setsYear(int sYear) {
-        this.SYear = sYear;
+    public void setSYear(int SYear) {
+        this.SYear = SYear;
     }
 
     public void setEmail(String email) {
         Email = email;
     }
 
-    public void setsGender(String sGender) {
-        this.SGender = sGender;
+    public void setSGender(String SGender) {
+        this.SGender = SGender;
     }
 
     public void setPhone_number(String phone_number) {
-        this.Phone_number = phone_number;
+        Phone_number = phone_number;
     }
 
-    public String getsNumber() {
+    public String getSNumber() {
 
-        return sNumber;
+        return SNumber;
     }
 
     public String getMajor_number() {
         return Major_number;
     }
 
-    public int getsYear() {
+    public int getSYear() {
         return SYear;
     }
 
@@ -49,7 +49,7 @@ public class StudentBean {
         return Email;
     }
 
-    public String getsGender() {
+    public String getSGender() {
         return SGender;
     }
 

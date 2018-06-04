@@ -46,14 +46,14 @@ public class BoardDao extends CommonDao {
             post.setFile(rs.getString("File_name"));
             postList.add(post);
         }
+
         closeConnection();
         return postList;
     }
 
     public ArrayList<StudentBean> getStudentList(String professorId, String lectureName) throws SQLException {
         //set query by professor id, lecture name, get result set
-        String sql = "SELECT * " +
-                "FROM STUDENT " +
+        String sql = "SELECT * FROM STUDENT " +
                 "WHERE STUDENT.SNumber IN (SELECT Student_number " +
                 "    FROM Student_take_course " +
                 "    WHERE Course_number = (SELECT CNumber FROM COURSE " +
@@ -63,17 +63,20 @@ public class BoardDao extends CommonDao {
         pstmt.setString(2, professorId);
         ResultSet rs = pstmt.executeQuery();
 
+        //set studentList
         ArrayList<StudentBean> studentList = new ArrayList<StudentBean>();
         while (rs.next()) {
             StudentBean student = new StudentBean();
-            student.setsNumber(rs.getString("SNumber"));
+            student.setSNumber(rs.getString("SNumber"));
             student.setMajor_number(rs.getString("Major_number"));
-            student.setsYear(rs.getInt("SYear"));
+            student.setSYear(rs.getInt("SYear"));
             student.setEmail(rs.getString("Email"));
-            student.setsGender(rs.getString("SGender"));
+            student.setSGender(rs.getString("SGender"));
             student.setPhone_number(rs.getString("Phone_number"));
+            studentList.add(student);
         }
 
+        closeConnection();
         return studentList;
     }
 
@@ -108,6 +111,7 @@ public class BoardDao extends CommonDao {
             post.setContent(rs.getString("Contents"));
             post.setFile(rs.getString("File_name"));
         }
+
         closeConnection();
         return post;
     }
@@ -200,6 +204,7 @@ public class BoardDao extends CommonDao {
             lectureList.add(rs.getString("CName"));
         }
 
+        closeConnection();
         return lectureList;
     }
 }

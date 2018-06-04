@@ -45,6 +45,6 @@ public class InsertAction implements CommandAction {
         post.setFile(fileName);
         BoardDao.getInstance().addPost(dest, lectureName, post);
 
-        return "insert.jsp";
+        return "redirectToBoard.jsp";
     }
 }

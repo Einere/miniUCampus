@@ -6,11 +6,6 @@
   To change this template use File | Settings | File Templates.
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
-<%@ page import="java.util.regex.Pattern" %>
-<%@ page import="java.sql.*" %>
-<%@ page import="java.text.*" %>
-<%@ page import="java.util.ArrayList" %>
-<%@ page import="Beans.BoardBean" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <html>
 <head>
@@ -60,9 +55,9 @@
                         <table>
                             <tbody>
                             <c:forEach items="${postList}" var="post">
-                                <tr class="row100 body">
+                                <tr class="row100 body" onclick="window.location.href='count.do?index=${post.index}'">
                                     <td class="cell100 column1">${post.index}</td>
-                                    <td class="cell100 column2" onclick="window.location.href='count.do?index=${post.index}'">${post.title}</td>
+                                    <td class="cell100 column2">${post.title}</td>
                                     <td class="cell100 column3">${post.writer}</td>
                                     <td class="cell100 column4">${post.date}</td>
                                     <td class="cell100 column5">${post.view}</td>
@@ -76,7 +71,7 @@
         </div>
     </div>
     <button onclick="window.location.href='write.jsp'">write</button>
-    <button onclick="window.location.href='redirectToHome.do'">back to home</button>
+    <button onclick="window.location.href='redirectToHomeAction.do'">back to home</button>
 </div>
 <script src="vendor/jquery/jquery-3.2.1.min.js"></script>
 <script src="vendor/bootstrap/js/popper.js"></script>
