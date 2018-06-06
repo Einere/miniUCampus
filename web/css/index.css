@@ -1,0 +1,101 @@
+@charset "UTF-8";
+
+/* 기본색    */
+
+:root {
+	--kwangwoon-red: #BA1200;
+	--kwangwoon-sal: #C5493B;
+	--kwangwoon-bld: #870D00;
+	
+	--accent-yel: #FFF600;
+	--accent-org: #FF9B00;
+	--back-gray: #C5C5C5;
+	--upper-gray: #525150;
+	--text-bright-color: #FFF;
+}
+
+body{
+	background: url(backImage/index_Back.jpg) no-repeat center center fixed; 
+	-webkit-background-size: cover;
+	-moz-background-size: cover;
+	-o-background-size: cover;
+	background-size: cover;
+
+	margin: 0;
+	padding: 0;
+	height: 100%;
+	font-family: '맑은 고딕',
+		'Apple SD Gothic Neo',
+		sans-serif;
+	
+}
+/*헤더 스타일*/
+header {
+	position :relative;
+	top: 0;
+	left: 0;
+	z-index: 100;
+	width: 100%;
+	background-color: rgba(255,255,255,0.5);
+}
+@media (min-width: 768px) {
+	header .container {
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+		margin-left: auto;
+		margin-right: auto; 
+	}
+}
+.toUCam{
+	display: inline-block;
+	line-height: 70px;
+	padding-left: 20px;
+	padding-right: 20px;
+	background-color: #FF9B00;
+	background-color: var(--accent-org);
+	color: #fff;
+	color: var(--text-bright-color);
+	font-family: '맑은 고딕', sans-serif;
+	font-size: 24px;
+	font-weight: bold;
+	text-decoration: none;
+}
+.toBoard{
+	display: inline-block;
+	line-height: 70px;
+	padding-left: 20px;
+	padding-right: 20px;
+	background-color: #C5493B;
+	background-color: var(--kwangwoon-sal);
+	color: #fff;
+	color: var(--text-bright-color);
+	font-family: '맑은 고딕', sans-serif;
+	font-size: 24px;
+	font-weight: bold;
+	text-decoration: none;
+}
+
+/*슬라이더 스타일*/
+.slider{
+	width: 800px;
+	height: 450px;
+	margin: 0 auto;
+	overflow: hidden;
+}
+.slides{
+	display: block;
+	width: 5000px;
+	height: 450px;
+	list-style: none;
+	margin: 0;
+	padding: 0;
+}
+.slide{
+	float: left;
+	height: 450px;
+	width: 800px;
+}
+
+
+
