@@ -8,7 +8,6 @@
   <component name="ChangeListManager">
     <list default="true" id="4309f240-e892-4157-87b2-823ace24e096" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/index.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/web/index.jsp" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -42,7 +41,7 @@
       <file leaf-file-name="home.jsp" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/web/home.jsp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="450">
+            <state relative-caret-position="475">
               <caret line="25" column="4" selection-start-line="25" selection-start-column="4" selection-end-line="25" selection-end-column="72" />
             </state>
           </provider>
@@ -51,7 +50,7 @@
       <file leaf-file-name="StudentAction.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Action/StudentAction.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="396">
+            <state relative-caret-position="418">
               <caret line="28" column="9" selection-start-line="28" selection-start-column="9" selection-end-line="28" selection-end-column="9" />
             </state>
           </provider>
@@ -60,7 +59,7 @@
       <file leaf-file-name="student.jsp" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/web/student.jsp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1998">
+            <state relative-caret-position="2109">
               <caret line="111" selection-start-line="111" selection-end-line="111" selection-end-column="34" />
             </state>
           </provider>
@@ -69,8 +68,12 @@
       <file leaf-file-name="mail.jsp" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/web/mail.jsp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1098">
-              <caret line="61" column="7" selection-start-line="61" selection-start-column="7" selection-end-line="61" selection-end-column="7" />
+            <state relative-caret-position="912">
+              <caret line="48" column="9" selection-start-line="48" selection-start-column="9" selection-end-line="48" selection-end-column="9" />
+              <folding>
+                <element signature="n#style#0;n#span#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#span#0;n#!!top" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -78,26 +81,35 @@
       <file leaf-file-name="write.jsp" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/web/write.jsp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="828">
+            <state relative-caret-position="874">
               <caret line="46" column="17" selection-start-line="46" selection-start-column="17" selection-end-line="46" selection-end-column="17" />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="mailAction.java" pinned="false" current-in-tab="false">
+      <file leaf-file-name="mailAction.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/Action/mailAction.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="908">
-              <caret line="56" column="115" selection-start-line="56" selection-start-column="115" selection-end-line="56" selection-end-column="115" />
+            <state relative-caret-position="475">
+              <caret line="33" column="55" selection-start-line="33" selection-start-column="55" selection-end-line="33" selection-end-column="55" />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="index.jsp" pinned="false" current-in-tab="true">
+      <file leaf-file-name="index.jsp" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/web/index.jsp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="990">
+            <state relative-caret-position="522">
               <caret line="55" selection-start-line="55" selection-end-line="55" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="login.jsp" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/web/login.jsp">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-418">
+              <caret line="14" column="25" selection-start-line="14" selection-start-column="25" selection-end-line="14" selection-end-column="25" />
             </state>
           </provider>
         </entry>
@@ -105,7 +117,7 @@
       <file leaf-file-name="BoardDao.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Action/BoardDao.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1260">
+            <state relative-caret-position="1159">
               <caret line="70" selection-start-line="70" selection-end-line="70" />
             </state>
           </provider>
@@ -211,10 +223,10 @@
         <option value="$PROJECT_DIR$/src/Action/StudentAction.java" />
         <option value="$PROJECT_DIR$/web/board.jsp" />
         <option value="$PROJECT_DIR$/src/Property/Command.properties" />
-        <option value="$PROJECT_DIR$/src/Action/mailAction.java" />
         <option value="$PROJECT_DIR$/web/student.jsp" />
         <option value="$PROJECT_DIR$/web/mail.jsp" />
         <option value="$PROJECT_DIR$/web/index.jsp" />
+        <option value="$PROJECT_DIR$/src/Action/mailAction.java" />
       </list>
     </option>
   </component>
@@ -240,7 +252,7 @@
   <component name="NodePackageJsonFileManager">
     <packageJsonPaths />
   </component>
-  <component name="ProjectFrameBounds" extendedState="6">
+  <component name="ProjectFrameBounds" extendedState="7">
     <option name="x" value="260" />
     <option name="y" value="40" />
     <option name="width" value="1400" />
@@ -256,30 +268,32 @@
         <subPane>
           <expand>
             <path>
-              <item name="miniUCampus" type="b2602c69:ProjectViewProjectNode" />
-              <item name="miniUCampus" type="462c0819:PsiDirectoryNode" />
+              <item name="DB-HW02" type="b2602c69:ProjectViewProjectNode" />
+              <item name="DB-HW02" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
-              <item name="miniUCampus" type="b2602c69:ProjectViewProjectNode" />
-              <item name="miniUCampus" type="462c0819:PsiDirectoryNode" />
+              <item name="DB-HW02" type="b2602c69:ProjectViewProjectNode" />
+              <item name="DB-HW02" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="DB-HW02" type="b2602c69:ProjectViewProjectNode" />
+              <item name="DB-HW02" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="Action" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="DB-HW02" type="b2602c69:ProjectViewProjectNode" />
+              <item name="DB-HW02" type="462c0819:PsiDirectoryNode" />
               <item name="web" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="miniUCampus" type="b2602c69:ProjectViewProjectNode" />
-              <item name="External Libraries" type="cb654da1:ExternalLibrariesNode" />
-            </path>
-            <path>
-              <item name="miniUCampus" type="b2602c69:ProjectViewProjectNode" />
-              <item name="External Libraries" type="cb654da1:ExternalLibrariesNode" />
-              <item name="Tomcat 9.0.8" type="70bed36:NamedLibraryElementNode" />
             </path>
           </expand>
           <select />
         </subPane>
       </pane>
-      <pane id="AndroidView" />
-      <pane id="Scope" />
       <pane id="PackagesPane" />
+      <pane id="Scope" />
+      <pane id="AndroidView" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -548,6 +562,7 @@
       <workItem from="1528007008084" duration="35706000" />
       <workItem from="1528081550060" duration="6133000" />
       <workItem from="1528111559960" duration="670000" />
+      <workItem from="1528258468138" duration="1354000" />
     </task>
     <task id="LOCAL-00001" summary="Modify home.jsp, actions.">
       <created>1527857081407</created>
@@ -609,7 +624,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="220846000" />
+    <option name="totallyTimeSpent" value="222200000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -621,34 +636,34 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1936" height="1096" extended-state="6" />
+    <frame x="-7" y="-7" width="1550" height="838" extended-state="6" />
     <editor active="true" />
     <layout>
       <window_info anchor="right" id="Palette" order="3" />
-      <window_info anchor="bottom" id="Event Log" order="13" sideWeight="0.5042644" side_tool="true" weight="0.3322884" />
-      <window_info anchor="bottom" id="Application Servers" order="7" weight="0.32985386" />
-      <window_info anchor="right" id="Maven Projects" order="8" />
-      <window_info anchor="bottom" id="Database Changes" order="11" show_stripe_button="false" />
-      <window_info id="Capture Tool" order="7" />
-      <window_info id="Designer" order="2" />
-      <window_info anchor="right" id="Database" order="5" weight="0.32995737" />
-      <window_info id="Structure" order="1" sideWeight="0.513302" side_tool="true" weight="0.15138593" />
-      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
-      <window_info id="UI Designer" order="4" />
-      <window_info anchor="bottom" id="Debug" order="3" weight="0.39979124" />
       <window_info anchor="bottom" id="TODO" order="6" weight="0.32985386" />
-      <window_info anchor="bottom" id="Messages" order="9" sideWeight="0.4989339" weight="0.3291536" />
       <window_info anchor="right" id="Palette&#9;" order="6" />
       <window_info id="Image Layers" order="3" />
       <window_info anchor="bottom" id="Java Enterprise" order="10" weight="0.32985386" />
       <window_info anchor="right" id="Capture Analysis" order="4" />
+      <window_info anchor="bottom" id="Event Log" order="13" sideWeight="0.5042644" side_tool="true" weight="0.3322884" />
+      <window_info anchor="bottom" id="Application Servers" order="7" weight="0.32985386" />
+      <window_info anchor="right" id="Maven Projects" order="8" />
+      <window_info anchor="bottom" id="Database Changes" order="11" show_stripe_button="false" />
       <window_info anchor="bottom" id="Version Control" order="12" sideWeight="0.4978678" weight="0.3291536" />
-      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.49573562" visible="true" weight="0.3322884" />
+      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.49573562" weight="0.3322884" />
       <window_info anchor="bottom" id="Terminal" order="8" sideWeight="0.49946696" weight="0.33019853" />
-      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.48513302" visible="true" weight="0.16257995" />
+      <window_info id="Capture Tool" order="7" />
+      <window_info id="Designer" order="2" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.48513302" visible="true" weight="0.16210938" />
       <window_info id="Web" order="6" sideWeight="0.514867" side_tool="true" weight="0.15298508" />
+      <window_info anchor="right" id="Database" order="5" weight="0.32995737" />
+      <window_info id="Structure" order="1" sideWeight="0.513302" side_tool="true" weight="0.15138593" />
+      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
+      <window_info id="UI Designer" order="4" />
       <window_info anchor="right" id="Theme Preview" order="7" />
       <window_info id="Favorites" order="5" side_tool="true" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.39979124" />
+      <window_info anchor="bottom" id="Messages" order="9" sideWeight="0.4989339" weight="0.3291536" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
@@ -765,13 +780,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="234">
           <caret line="13" column="14" lean-forward="true" selection-start-line="13" selection-start-column="14" selection-end-line="13" selection-end-column="14" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/web/login.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="340">
-          <caret line="67" selection-start-line="67" selection-end-line="67" />
         </state>
       </provider>
     </entry>
@@ -935,14 +943,14 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/web/home.jsp">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="450">
+        <state relative-caret-position="475">
           <caret line="25" column="4" selection-start-line="25" selection-start-column="4" selection-end-line="25" selection-end-column="72" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Action/StudentAction.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="396">
+        <state relative-caret-position="418">
           <caret line="28" column="9" selection-start-line="28" selection-start-column="9" selection-end-line="28" selection-end-column="9" />
         </state>
       </provider>
@@ -956,43 +964,54 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/web/write.jsp">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="828">
+        <state relative-caret-position="874">
           <caret line="46" column="17" selection-start-line="46" selection-start-column="17" selection-end-line="46" selection-end-column="17" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/web/student.jsp">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1998">
+        <state relative-caret-position="2109">
           <caret line="111" selection-start-line="111" selection-end-line="111" selection-end-column="34" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Action/BoardDao.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1260">
+        <state relative-caret-position="1159">
           <caret line="70" selection-start-line="70" selection-end-line="70" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/web/mail.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1098">
-          <caret line="61" column="7" selection-start-line="61" selection-start-column="7" selection-end-line="61" selection-end-column="7" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Action/mailAction.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="908">
-          <caret line="56" column="115" selection-start-line="56" selection-start-column="115" selection-end-line="56" selection-end-column="115" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/web/index.jsp">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="990">
+        <state relative-caret-position="522">
           <caret line="55" selection-start-line="55" selection-end-line="55" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/login.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-418">
+          <caret line="14" column="25" selection-start-line="14" selection-start-column="25" selection-end-line="14" selection-end-column="25" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/mail.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="912">
+          <caret line="48" column="9" selection-start-line="48" selection-start-column="9" selection-end-line="48" selection-end-column="9" />
+          <folding>
+            <element signature="n#style#0;n#span#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#span#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Action/mailAction.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="475">
+          <caret line="33" column="55" selection-start-line="33" selection-start-column="55" selection-end-line="33" selection-end-column="55" />
         </state>
       </provider>
     </entry>
@@ -1002,7 +1021,7 @@
       <state key="ArtifactsStructureConfigurable.UI">
         <settings>
           <artifact-editor />
-          <last-edited>miniUCampus:war exploded</last-edited>
+          <last-edited />
           <splitter-proportions>
             <option name="proportions">
               <list>
@@ -1052,6 +1071,18 @@
       <state key="ModuleStructureConfigurable.UI">
         <settings>
           <last-edited>miniUCampus</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="ProjectJDKs.UI">
+        <settings>
+          <last-edited>10</last-edited>
           <splitter-proportions>
             <option name="proportions">
               <list>
