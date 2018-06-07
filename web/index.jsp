@@ -14,11 +14,14 @@
     <link rel="stylesheet" href="css\index.css"/>
 </head>
 <body>
+<img src="images/backImage/index_back.jpg" class="bg" alt=""/>
+
 <header>
     <div class="container">
         <a href="index.jsp"><img src="images/logoImage/main_logo.jpg" height="70px" alt="main logo"></a>
         <nav class="headNav">
-            <a href="login.jsp" target="_blank" class="toUCam">U-CAM</a>
+            <input type="button" value="U-CAM" onclick="location.href='login.html'"  class="toUCam">
+            <input type="button" value="자유게시판 " class="toBoard" onclick="alert('로그인 하세요')">
         </nav>
     </div>
 </header>
@@ -27,9 +30,9 @@
         <ul class="slides">
             <li class="slide"><img src="images/slideImage/00.jpg" alt="slide1" title="메인화면" width="800px"/></li>
             <li class="slide"><img src="images/slideImage/01.jpg" alt="slide2" title="기념관" width="800px"/></li>
-            <li class="slide"><img src="images/slideImage/02.jpg" alt="slide3" title="비마상" width="800px"/></li>
-            <li class="slide"><img src="images/slideImage/03.jpg" alt="slide4" title="새빛관" width="800px"/></li>
-            <li class="slide"><img src="images/slideImage/04.jpg" alt="slide5" title="광팡야" width="800px"/></li>
+            <li class="slide"><img src="images/slideImage/02.jpg" alt="slide3" title="광팡야" width="800px"/></li>
+            <li class="slide"><img src="images/slideImage/03.jpg" alt="slide4" title="비마상" width="800px"/></li>
+            <li class="slide"><img src="images/slideImage/04.jpg" alt="slide5" title="새빛관" width="800px"/></li>
         </ul>
     </div>
     <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>

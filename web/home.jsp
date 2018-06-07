@@ -9,7 +9,7 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
-    <title>home</title>
+    <title>U-CAMPUS</title>
     <script>
         function lecture(){
             window.location.href="list.do?dest=lecture";
@@ -20,14 +20,21 @@
     </script>
 </head>
 <body>
-<button onclick="lecture()">lecture</button>
-<button onclick="free()">free</button>
-<c:if test="${identity eq 'professor'}">
-    <button onclick="window.location.href='student.do'">student</button>
-</c:if>
-<button onclick="window.location.href='signout.do'">sign out</button>
 <div>
     <span>welcome, ${identity}, ${id}, ${name}</span>
 </div>
+
+<section class="icons">
+    <div class="topIcons">
+        <c:if test="${identity eq 'professor'}">
+        <button onclick="window.location.href='student.do'" class="student"><img src="images/logoImage/student.png"></button>
+        </c:if>
+        <button onclick="window.location.href='signout.do'" class="signout"><img src="images/logoImage/signout.png"></button>
+    </div>
+    <div class="mainIcons">
+        <button onclick="lecture()"><img src="images/logoImage/lecture.png" width="300px" class="lecture"></button>
+        <button onclick="free()"><img src="images/logoImage/free.png"width="300px" class="free"></button>
+    </div>
+</section>
 </body>
 </html>

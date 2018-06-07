@@ -1,0 +1,45 @@
+@charset "UTF-8";
+
+/* 기본색    */
+
+:root {
+	--kwangwoon-red: #BA1200;
+	--kwangwoon-sal: #C5493B;
+	--kwangwoon-bld: #870D00;
+	
+	--accent-yel: #FFF600;
+	--accent-org: #FF9B00;
+	--back-gray: #C5C5C5;
+	--upper-gray: #525150;
+	--text-bright-color: #FFF;
+}
+
+body{
+	background-image: url(ucam_back);
+	background-position: center;
+	background-size: cover;
+	margin: 0;
+	padding: 0;
+	height: 100%;
+	font-family: '맑은 고딕',
+		'Apple SD Gothic Neo',
+		sans-serif;
+}
+
+.student{
+
+}
+
+.signout{
+
+}
+
+.mainIcons{
+	position: relative;
+	display: block;
+	height: 450px;
+	list-style: none;
+	margin: 0;
+	padding: 0;
+}
+

@@ -7,69 +7,31 @@
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <!--jsp:include page="WEB-INF/jsLibrary.jsp" -->
-<html>
+<!DOCTYPE html>
+<html lang="ko">
 <head>
-    <title>Login</title>
-    <style type="text/css">
-        body {
-            font-family: Arial, Helvetica, sans-serif;
-            font-size: 14px;
-        }
-
-        label {
-            font-weight: bold;
-            width: 100px;
-            font-size: 14px;
-        }
-
-        .box {
-            border: #666666 solid 1px;
-        }
-
-        .layer {
-            position: absolute;
-            top: 0;
-            right: 0;
-            bottom: 0;
-            left: 0;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            display: -webkit-flex;
-            /*-webkit-align-item:center;*/
-            -webkit-justify-content: center;
-        }
-    </style>
+    <meta charset="utf-8">
+    <title>U-Campus Login</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/login.css"/>
 </head>
+
 <body>
-<div align="center" class="layer">
-    <div style="width: 350px; border: solid 1px;" align="center">
-        <div style="background-color:#333333; color:#FFFFFF; padding:10px;"><b>Log in</b></div>
-        <div style="margin:30px;">
-            <form action="signin.do" method="post">
-                <table>
-                    <tr>
-                        <td><label>Id : </label></td>
-                        <td><input type="text" name="id" class="box"/></td>
-                    </tr>
-                    <tr>
-                        <td><label>Password : </label></td>
-                        <td><input type="password" name="pw" class="box"/></td>
-                    </tr>
-                    <tr>
-                        <td><label>Identity : </label></td>
-                        <td>
-                            <select name="identity" class="box">
-                                <option value="student">student</option>
-                                <option value="professor">professor</option>
-                            </select>
-                        </td>
-                    </tr>
-                </table>
-                <input type="submit" value="Log in" style="margin-right: 40px;"/>
-            </form>
-        </div>
-    </div>
-</div>
+
+<section class="logoContainer">
+    <a href="index.jsp"><img src="images/logoImage/no_back_logo.png" height="100px" alt="toMain" class="logo"></a>
+</section>
+<section class="user">
+    <form action="signin.do" method="post">
+        <ul class= "info">
+            <li><select name="identity" class="getLV">
+                <option value="student">학부생</option>
+                <option value="professor">교수</option>
+            </select></li>
+            <li><input type="text" name="id" placeholder="아이디" class="getID"></li>
+            <li><input type="password" name="pw" placeholder="비밀번호"class="getPW"></li>
+            <li><input type="submit" value="로그인" class="loginButton" ></li>
+        </ul>
+    </form>
+</section>
 </body>
-</html>

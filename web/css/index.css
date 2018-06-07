@@ -14,21 +14,25 @@
 	--text-bright-color: #FFF;
 }
 
-body{
-	background: url(backImage/index_Back.jpg) no-repeat center center fixed; 
-	-webkit-background-size: cover;
-	-moz-background-size: cover;
-	-o-background-size: cover;
-	background-size: cover;
+.bg{
+	position: fixed;
+	top: 0;
+	left: 0;
+	
+	min-width: 100%;
+	min-height: 100%;
+	z-index: 0;
+}
 
+body{
 	margin: 0;
 	padding: 0;
 	height: 100%;
 	font-family: '맑은 고딕',
 		'Apple SD Gothic Neo',
 		sans-serif;
-	
 }
+
 /*헤더 스타일*/
 header {
 	position :relative;
@@ -77,10 +81,19 @@ header {
 }
 
 /*슬라이더 스타일*/
+.mid{
+	position: absolute;
+	top: 100px;
+	left: 375px;
+	
+	z-index: 50;
+}
+
 .slider{
 	width: 800px;
 	height: 450px;
-	margin: 0 auto;
+	margin-left: auto;
+	margin-right: auto;
 	overflow: hidden;
 }
 .slides{

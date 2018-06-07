@@ -1,0 +1,94 @@
+@charset "UTF-8";
+
+/* 기본색    */
+
+:root {
+	--kwangwoon-red: #BA1200;
+	--kwangwoon-sal: #C5493B;
+	--kwangwoon-bld: #870D00;
+	
+	--accent-yel: #FFF600;
+	--accent-org: #FF9B00;
+	--back-gray: #C5C5C5;
+	--upper-gray: #525150;
+	--in-yellow: #FFFFA3;
+	--text-bright-color: #FFF;
+}
+
+body{
+	margin: 0;
+	padding: 0;
+	height: 100%;
+	font-family: '맑은 고딕',
+		'Apple SD Gothic Neo',
+		sans-serif;
+	
+}
+/*logo 디자인*/
+.logoContainer{
+	text-align:center;
+}
+
+.logo{
+	display: inline-block;
+}
+/*인풋폼 디자인*/
+.user
+{
+	text-align: center;
+}
+
+.info
+{
+	list-style: none;
+}
+
+.getLV
+{
+	width: 300px;
+	height: 30px;
+	position: relative;
+	background-color: #FFFFA3;
+	background-color: var(--in-yellow);
+	
+}
+
+.getID
+{
+	width: 300px;
+	height: 30px;
+	position: relative;
+	top: 10px;
+}
+
+.getPW
+{
+	width: 300px;
+	height: 30px;
+	position: relative;
+	top: 20px;
+}
+
+.loginButton
+{
+	width: 300px;
+	height: 40px;
+	position: relative;
+	top: 30px;
+	background-color: #FF9B00;
+	background-color: var(--accent-org);
+	border: solid 3px currentColor;
+	border-radius: 6px;
+	color: #FFF;
+	color: var(--text-bright-color);
+	font-size: 16px;
+	font-weight: bold;
+}
+
+.loginButton:hover{
+	background-image: linear-gradient(
+	rgba(255,255,255,0.2),
+	rgba(255,255,255,0.2)
+	);
+}
+
