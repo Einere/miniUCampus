@@ -15,15 +15,15 @@ public class mailAction implements CommandAction {
     public String requestPro(HttpServletRequest request, HttpServletResponse response) throws Throwable {
         try {
             HttpSession session = request.getSession();
+            request.setCharacterEncoding("utf-8");
 
             final String host = "smtp.naver.com";
             final int port = 456;
             final String userName = "cutiemung2";
             final String password = "wjd1d1d1"; // 실제 네이버 비밀번호
 
-            String[] recipients = {
-                    request.getParameter("receiver") //ex) kjwsx23@naver.com
-            };
+            String[] recipients = request.getParameterValues("mailList");
+
 
             InternetAddress[] addrs = new InternetAddress[recipients.length];
             for (int index = 0; index < recipients.length; ++index) {
@@ -32,6 +32,8 @@ public class mailAction implements CommandAction {
 
             String subject = request.getParameter("subject");
             String body = request.getParameter("body");
+            System.out.println("in mailAction... subject = " + subject);
+            System.out.println("in mailAction... body = " +body);
 
             Properties props = System.getProperties();
 
@@ -66,6 +68,6 @@ public class mailAction implements CommandAction {
             System.out.println("메일 발송에 실패하였습니다.");
         }
 
-        return "student.jsp";
+        return "student.do";
     }
 }

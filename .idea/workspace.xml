@@ -6,8 +6,17 @@
     </artifacts-to-build>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="4309f240-e892-4157-87b2-823ace24e096" name="Default" comment="">
+    <list default="true" id="4309f240-e892-4157-87b2-823ace24e096" name="Default" comment="Implement index">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/miniUCampus_war_exploded/css/layer_button.css" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/miniUCampus_war_exploded/css/layer_button.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/miniUCampus_war_exploded/css/main.css" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/miniUCampus_war_exploded/css/main.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/miniUCampus_war_exploded/index.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/miniUCampus_war_exploded/index.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Action/SignoutAction.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Action/SignoutAction.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Action/mailAction.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Action/mailAction.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/css/layer_button.css" beforeDir="false" afterPath="$PROJECT_DIR$/web/css/layer_button.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/css/main.css" beforeDir="false" afterPath="$PROJECT_DIR$/web/css/main.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/mail.jsp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/student.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/web/student.jsp" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -41,8 +50,17 @@
       <file leaf-file-name="home.jsp" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/web/home.jsp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="475">
+            <state relative-caret-position="450">
               <caret line="25" column="4" selection-start-line="25" selection-start-column="4" selection-end-line="25" selection-end-column="72" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="SignoutAction.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/Action/SignoutAction.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="288">
+              <caret line="18" column="20" selection-start-line="18" selection-start-column="20" selection-end-line="18" selection-end-column="20" />
             </state>
           </provider>
         </entry>
@@ -50,48 +68,26 @@
       <file leaf-file-name="StudentAction.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Action/StudentAction.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="418">
-              <caret line="28" column="9" selection-start-line="28" selection-start-column="9" selection-end-line="28" selection-end-column="9" />
+            <state relative-caret-position="126">
+              <caret line="13" column="8" selection-start-line="13" selection-start-column="8" selection-end-line="13" selection-end-column="46" />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="student.jsp" pinned="false" current-in-tab="false">
+      <file leaf-file-name="student.jsp" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/web/student.jsp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="2109">
-              <caret line="111" selection-start-line="111" selection-end-line="111" selection-end-column="34" />
+            <state relative-caret-position="288">
+              <caret line="89" selection-start-line="89" selection-end-line="89" />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="mail.jsp" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/web/mail.jsp">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="912">
-              <caret line="48" column="9" selection-start-line="48" selection-start-column="9" selection-end-line="48" selection-end-column="9" />
-              <folding>
-                <element signature="n#style#0;n#span#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#span#0;n#!!top" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="write.jsp" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/web/write.jsp">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="874">
-              <caret line="46" column="17" selection-start-line="46" selection-start-column="17" selection-end-line="46" selection-end-column="17" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="mailAction.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="mailAction.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Action/mailAction.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="475">
-              <caret line="33" column="55" selection-start-line="33" selection-start-column="55" selection-end-line="33" selection-end-column="55" />
+            <state relative-caret-position="486">
+              <caret line="35" column="53" selection-start-line="35" selection-start-column="53" selection-end-line="35" selection-end-column="53" />
             </state>
           </provider>
         </entry>
@@ -99,17 +95,8 @@
       <file leaf-file-name="index.jsp" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/web/index.jsp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="522">
-              <caret line="55" selection-start-line="55" selection-end-line="55" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="login.jsp" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/web/login.jsp">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-418">
-              <caret line="14" column="25" selection-start-line="14" selection-start-column="25" selection-end-line="14" selection-end-column="25" />
+            <state relative-caret-position="774">
+              <caret line="43" column="29" selection-start-line="43" selection-start-column="29" selection-end-line="43" selection-end-column="29" />
             </state>
           </provider>
         </entry>
@@ -117,7 +104,7 @@
       <file leaf-file-name="BoardDao.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Action/BoardDao.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1159">
+            <state relative-caret-position="1098">
               <caret line="70" selection-start-line="70" selection-end-line="70" />
             </state>
           </provider>
@@ -138,9 +125,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>loadProperties</find>
-      <find>Map</find>
-      <find>init</find>
       <find>print</find>
       <find>asdf</find>
       <find>download.do</find>
@@ -159,7 +143,6 @@
       <find>success</find>
       <find>td</find>
       <find>studentList</find>
-      <find>cursor</find>
       <find>category_number</find>
       <find>redirectToHomeAction.do</find>
       <find>earch</find>
@@ -168,6 +151,10 @@
       <find>ver</find>
       <find>session.set</find>
       <find>column</find>
+      <find>cursor</find>
+      <find>submit</find>
+      <find>utf</find>
+      <find>form</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -207,8 +194,6 @@
         <option value="$PROJECT_DIR$/src/Action/CommonDao.java" />
         <option value="$PROJECT_DIR$/src/Action/SigninAction.java" />
         <option value="$PROJECT_DIR$/src/Action/redirectToHome.java" />
-        <option value="$PROJECT_DIR$/src/Action/SignoutAction.java" />
-        <option value="$PROJECT_DIR$/web/css/layer_button.css" />
         <option value="$PROJECT_DIR$/web/detail.jsp" />
         <option value="$PROJECT_DIR$/src/Action/ListAction.java" />
         <option value="$PROJECT_DIR$/web/insert.jsp" />
@@ -218,15 +203,17 @@
         <option value="$PROJECT_DIR$/src/Action/InsertAction.java" />
         <option value="$PROJECT_DIR$/web/redirectToBoard.jsp" />
         <option value="$PROJECT_DIR$/src/Beans/StudentBean.java" />
-        <option value="$PROJECT_DIR$/web/css/main.css" />
         <option value="$PROJECT_DIR$/src/Action/BoardDao.java" />
         <option value="$PROJECT_DIR$/src/Action/StudentAction.java" />
         <option value="$PROJECT_DIR$/web/board.jsp" />
         <option value="$PROJECT_DIR$/src/Property/Command.properties" />
-        <option value="$PROJECT_DIR$/web/student.jsp" />
-        <option value="$PROJECT_DIR$/web/mail.jsp" />
         <option value="$PROJECT_DIR$/web/index.jsp" />
+        <option value="$PROJECT_DIR$/web/css/main.css" />
+        <option value="$PROJECT_DIR$/web/css/layer_button.css" />
+        <option value="$PROJECT_DIR$/web/mail.jsp" />
         <option value="$PROJECT_DIR$/src/Action/mailAction.java" />
+        <option value="$PROJECT_DIR$/src/Action/SignoutAction.java" />
+        <option value="$PROJECT_DIR$/web/student.jsp" />
       </list>
     </option>
   </component>
@@ -252,7 +239,7 @@
   <component name="NodePackageJsonFileManager">
     <packageJsonPaths />
   </component>
-  <component name="ProjectFrameBounds" extendedState="7">
+  <component name="ProjectFrameBounds" extendedState="6">
     <option name="x" value="260" />
     <option name="y" value="40" />
     <option name="width" value="1400" />
@@ -264,36 +251,57 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="AndroidView" />
+      <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
             <path>
-              <item name="DB-HW02" type="b2602c69:ProjectViewProjectNode" />
-              <item name="DB-HW02" type="462c0819:PsiDirectoryNode" />
+              <item name="miniUCampus" type="b2602c69:ProjectViewProjectNode" />
+              <item name="miniUCampus" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
-              <item name="DB-HW02" type="b2602c69:ProjectViewProjectNode" />
-              <item name="DB-HW02" type="462c0819:PsiDirectoryNode" />
+              <item name="miniUCampus" type="b2602c69:ProjectViewProjectNode" />
+              <item name="miniUCampus" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
-              <item name="DB-HW02" type="b2602c69:ProjectViewProjectNode" />
-              <item name="DB-HW02" type="462c0819:PsiDirectoryNode" />
+              <item name="miniUCampus" type="b2602c69:ProjectViewProjectNode" />
+              <item name="miniUCampus" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="Action" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
-              <item name="DB-HW02" type="b2602c69:ProjectViewProjectNode" />
-              <item name="DB-HW02" type="462c0819:PsiDirectoryNode" />
+              <item name="miniUCampus" type="b2602c69:ProjectViewProjectNode" />
+              <item name="miniUCampus" type="462c0819:PsiDirectoryNode" />
               <item name="web" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="miniUCampus" type="b2602c69:ProjectViewProjectNode" />
+              <item name="miniUCampus" type="462c0819:PsiDirectoryNode" />
+              <item name="web" type="462c0819:PsiDirectoryNode" />
+              <item name="css" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="miniUCampus" type="b2602c69:ProjectViewProjectNode" />
+              <item name="miniUCampus" type="462c0819:PsiDirectoryNode" />
+              <item name="web" type="462c0819:PsiDirectoryNode" />
+              <item name="images" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="miniUCampus" type="b2602c69:ProjectViewProjectNode" />
+              <item name="External Libraries" type="cb654da1:ExternalLibrariesNode" />
+            </path>
+            <path>
+              <item name="miniUCampus" type="b2602c69:ProjectViewProjectNode" />
+              <item name="External Libraries" type="cb654da1:ExternalLibrariesNode" />
+              <item name="Tomcat 9.0.8" type="70bed36:NamedLibraryElementNode" />
             </path>
           </expand>
           <select />
         </subPane>
       </pane>
-      <pane id="PackagesPane" />
       <pane id="Scope" />
-      <pane id="AndroidView" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -458,6 +466,7 @@
     </configuration>
     <configuration name="index.jsp" type="#com.intellij.j2ee.web.tomcat.TomcatRunConfigurationFactory" factoryName="Local" temporary="true" APPLICATION_SERVER_NAME="Tomcat 9.0.8" ALTERNATIVE_JRE_ENABLED="false">
       <option name="OPEN_IN_BROWSER_URL" value="http://localhost:8181/index.jsp" />
+      <option name="UPDATING_POLICY" value="restart-server" />
       <deployment>
         <artifact name="miniUCampus:war exploded">
           <settings>
@@ -561,8 +570,10 @@
       <workItem from="1527915455941" duration="39334000" />
       <workItem from="1528007008084" duration="35706000" />
       <workItem from="1528081550060" duration="6133000" />
-      <workItem from="1528111559960" duration="670000" />
-      <workItem from="1528258468138" duration="1354000" />
+      <workItem from="1528111559960" duration="813000" />
+      <workItem from="1528196677592" duration="238000" />
+      <workItem from="1528257616709" duration="10805000" />
+      <workItem from="1528268874216" duration="1037000" />
     </task>
     <task id="LOCAL-00001" summary="Modify home.jsp, actions.">
       <created>1527857081407</created>
@@ -620,11 +631,18 @@
       <option name="project" value="LOCAL" />
       <updated>1528111373179</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="Implement index">
+      <created>1528112335419</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1528112335420</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="222200000" />
+    <option name="totallyTimeSpent" value="233069000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -636,40 +654,40 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="-7" y="-7" width="1550" height="838" extended-state="6" />
+    <frame x="-8" y="-8" width="1936" height="1096" extended-state="6" />
     <editor active="true" />
     <layout>
       <window_info anchor="right" id="Palette" order="3" />
+      <window_info anchor="bottom" id="Event Log" order="13" sideWeight="0.50053304" side_tool="true" visible="true" weight="0.3291536" />
+      <window_info anchor="bottom" id="Application Servers" order="7" weight="0.32985386" />
+      <window_info anchor="right" id="Maven Projects" order="8" />
+      <window_info anchor="bottom" id="Database Changes" order="11" show_stripe_button="false" />
+      <window_info id="Capture Tool" order="7" />
+      <window_info id="Designer" order="2" />
+      <window_info anchor="right" id="Database" order="5" weight="0.32995737" />
+      <window_info id="Structure" order="1" sideWeight="0.514867" side_tool="true" weight="0.16577825" />
+      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
+      <window_info id="UI Designer" order="4" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.39979124" />
       <window_info anchor="bottom" id="TODO" order="6" weight="0.32985386" />
       <window_info anchor="right" id="Palette&#9;" order="6" />
       <window_info id="Image Layers" order="3" />
       <window_info anchor="bottom" id="Java Enterprise" order="10" weight="0.32985386" />
       <window_info anchor="right" id="Capture Analysis" order="4" />
-      <window_info anchor="bottom" id="Event Log" order="13" sideWeight="0.5042644" side_tool="true" weight="0.3322884" />
-      <window_info anchor="bottom" id="Application Servers" order="7" weight="0.32985386" />
-      <window_info anchor="right" id="Maven Projects" order="8" />
-      <window_info anchor="bottom" id="Database Changes" order="11" show_stripe_button="false" />
       <window_info anchor="bottom" id="Version Control" order="12" sideWeight="0.4978678" weight="0.3291536" />
-      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.49573562" weight="0.3322884" />
+      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.49520257" weight="0.3322884" />
       <window_info anchor="bottom" id="Terminal" order="8" sideWeight="0.49946696" weight="0.33019853" />
-      <window_info id="Capture Tool" order="7" />
-      <window_info id="Designer" order="2" />
-      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.48513302" visible="true" weight="0.16210938" />
+      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.48513302" visible="true" weight="0.1673774" />
       <window_info id="Web" order="6" sideWeight="0.514867" side_tool="true" weight="0.15298508" />
-      <window_info anchor="right" id="Database" order="5" weight="0.32995737" />
-      <window_info id="Structure" order="1" sideWeight="0.513302" side_tool="true" weight="0.15138593" />
-      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
-      <window_info id="UI Designer" order="4" />
+      <window_info anchor="bottom" id="Find" order="1" sideWeight="0.49946696" weight="0.3291536" />
       <window_info anchor="right" id="Theme Preview" order="7" />
       <window_info id="Favorites" order="5" side_tool="true" />
-      <window_info anchor="bottom" id="Debug" order="3" weight="0.39979124" />
       <window_info anchor="bottom" id="Messages" order="9" sideWeight="0.4989339" weight="0.3291536" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
-      <window_info anchor="bottom" id="Find" order="1" weight="0.3291536" />
     </layout>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -713,7 +731,8 @@
     <MESSAGE value="Implement board (write, counting view...)" />
     <MESSAGE value="Keep tract redirectToHome.java, SignoutAction" />
     <MESSAGE value="Implement student, mail" />
-    <option name="LAST_COMMIT_MESSAGE" value="Implement student, mail" />
+    <MESSAGE value="Implement index" />
+    <option name="LAST_COMMIT_MESSAGE" value="Implement index" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -783,6 +802,13 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/web/login.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="340">
+          <caret line="67" selection-start-line="67" selection-end-line="67" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/.idea/workspace.xml">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
@@ -822,13 +848,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Action/SignoutAction.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="306">
-          <caret line="17" column="44" selection-start-line="17" selection-start-column="44" selection-end-line="17" selection-end-column="44" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/web/css/util.css">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="834">
@@ -840,13 +859,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="364">
           <caret line="52" column="50" selection-start-line="52" selection-start-column="50" selection-end-line="52" selection-end-column="50" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/web/css/layer_button.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="288">
-          <caret line="16" column="10" selection-start-line="16" selection-start-column="4" selection-end-line="16" selection-end-column="10" />
         </state>
       </provider>
     </entry>
@@ -906,13 +918,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/web/css/main.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="270">
-          <caret line="216" column="13" selection-start-line="216" selection-start-column="13" selection-end-line="216" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/Action/ListAction.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="630">
@@ -941,20 +946,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/web/home.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="475">
-          <caret line="25" column="4" selection-start-line="25" selection-start-column="4" selection-end-line="25" selection-end-column="72" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Action/StudentAction.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="418">
-          <caret line="28" column="9" selection-start-line="28" selection-start-column="9" selection-end-line="28" selection-end-column="9" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/Action/SigninAction.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="769">
@@ -962,45 +953,73 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/web/write.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="874">
-          <caret line="46" column="17" selection-start-line="46" selection-start-column="17" selection-end-line="46" selection-end-column="17" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/web/student.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2109">
-          <caret line="111" selection-start-line="111" selection-end-line="111" selection-end-column="34" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/Action/BoardDao.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1159">
+        <state relative-caret-position="1098">
           <caret line="70" selection-start-line="70" selection-end-line="70" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Action/StudentAction.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="126">
+          <caret line="13" column="8" selection-start-line="13" selection-start-column="8" selection-end-line="13" selection-end-column="46" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/css/main.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="373">
+          <caret line="220" column="13" selection-start-line="220" selection-start-column="13" selection-end-line="220" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/write.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="445">
+          <caret line="46" column="17" selection-start-line="46" selection-start-column="17" selection-end-line="46" selection-end-column="17" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/web/index.jsp">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="522">
-          <caret line="55" selection-start-line="55" selection-end-line="55" />
+        <state relative-caret-position="774">
+          <caret line="43" column="29" selection-start-line="43" selection-start-column="29" selection-end-line="43" selection-end-column="29" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/web/login.jsp">
+    <entry file="file://$PROJECT_DIR$/web/css/layer_button.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-418">
-          <caret line="14" column="25" selection-start-line="14" selection-start-column="25" selection-end-line="14" selection-end-column="25" />
+        <state relative-caret-position="108">
+          <caret line="6" lean-forward="true" selection-start-line="6" selection-end-line="6" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Action/mailAction.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="486">
+          <caret line="35" column="53" selection-start-line="35" selection-start-column="53" selection-end-line="35" selection-end-column="53" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Action/SignoutAction.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="288">
+          <caret line="18" column="20" selection-start-line="18" selection-start-column="20" selection-end-line="18" selection-end-column="20" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/home.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="450">
+          <caret line="25" column="4" selection-start-line="25" selection-start-column="4" selection-end-line="25" selection-end-column="72" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/web/mail.jsp">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="912">
-          <caret line="48" column="9" selection-start-line="48" selection-start-column="9" selection-end-line="48" selection-end-column="9" />
+        <state relative-caret-position="18">
+          <caret line="13" selection-start-line="13" selection-end-line="13" />
           <folding>
             <element signature="n#style#0;n#span#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#span#0;n#!!top" expanded="true" />
@@ -1008,10 +1027,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Action/mailAction.java">
+    <entry file="file://$PROJECT_DIR$/web/student.jsp">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="475">
-          <caret line="33" column="55" selection-start-line="33" selection-start-column="55" selection-end-line="33" selection-end-column="55" />
+        <state relative-caret-position="288">
+          <caret line="89" selection-start-line="89" selection-end-line="89" />
         </state>
       </provider>
     </entry>
@@ -1021,7 +1040,7 @@
       <state key="ArtifactsStructureConfigurable.UI">
         <settings>
           <artifact-editor />
-          <last-edited />
+          <last-edited>miniUCampus:war exploded</last-edited>
           <splitter-proportions>
             <option name="proportions">
               <list>
@@ -1071,18 +1090,6 @@
       <state key="ModuleStructureConfigurable.UI">
         <settings>
           <last-edited>miniUCampus</last-edited>
-          <splitter-proportions>
-            <option name="proportions">
-              <list>
-                <option value="0.2" />
-              </list>
-            </option>
-          </splitter-proportions>
-        </settings>
-      </state>
-      <state key="ProjectJDKs.UI">
-        <settings>
-          <last-edited>10</last-edited>
           <splitter-proportions>
             <option name="proportions">
               <list>

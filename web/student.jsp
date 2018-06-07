@@ -35,46 +35,58 @@
     <div>
         <h1>Student</h1>
     </div>
-    <div class="limiter">
-        <div class="container-table100">
-            <div class="wrap-table100">
-                <div class="table100 ver4 m-b-10">
-                    <div class="table100-head">
-                        <table>
-                            <thead>
-                            <tr class="row100 head">
-                                <th class="cell100 column1_1">sNumber</th>
-                                <th class="cell100 column2_2">Major_number</th>
-                                <th class="cell100 column3_3">sYear</th>
-                                <th class="cell100 column4_4">Email</th>
-                                <th class="cell100 column5_5">sGender</th>
-                                <th class="cell100 column6_6">phone_Number</th>
-                            </tr>
-                            </thead>
-                        </table>
-                    </div>
-
-                    <div class="table100-body js-pscroll">
-                        <table>
-                            <tbody id="tbody">
-                            <c:forEach items="${studentList}" var="student">
-                                <tr class="row100 body" onclick="">
-                                    <td class="cell100 column1_1">${student.SNumber}</td>
-                                    <td class="cell100 column2_2">${student.major_number}</td>
-                                    <td class="cell100 column3_3">${student.SYear}</td>
-                                    <td class="cell100 column4_4">${student.email}</td>
-                                    <td class="cell100 column5_5">${student.SGender}</td>
-                                    <td class="cell100 column6_6">${student.phone_number}</td>
+    <form method="post" action="mail.do" onsubmit="return check()">
+        <div class="limiter">
+            <div class="container-table100">
+                <div class="wrap-table100">
+                    <div class="table100 ver4 m-b-10">
+                        <div class="table100-head">
+                            <table>
+                                <thead>
+                                <tr class="row100 head">
+                                    <th class="cell100 column1_1">check</th>
+                                    <th class="cell100 column2_2">sNumber</th>
+                                    <th class="cell100 column3_3">Major</th>
+                                    <th class="cell100 column4_4">sYear</th>
+                                    <th class="cell100 column5_5">Email</th>
+                                    <th class="cell100 column6_6">sGender</th>
+                                    <th class="cell100 column7_7">phone</th>
                                 </tr>
-                            </c:forEach>
-                            </tbody>
-                        </table>
+                                </thead>
+                            </table>
+                        </div>
+
+                        <div class="table100-body js-pscroll">
+                            <table>
+                                <tbody id="tbody">
+                                <c:forEach items="${studentList}" var="student">
+                                    <tr class="row100 body" onclick="">
+                                        <td class="cell100 column1_1"><input type="checkbox" name="mailList" value="${student.email}"></td>
+                                        <td class="cell100 column2_2">${student.SNumber}</td>
+                                        <td class="cell100 column3_3">${student.major_number}</td>
+                                        <td class="cell100 column4_4">${student.SYear}</td>
+                                        <td class="cell100 column5_5">${student.email}</td>
+                                        <td class="cell100 column6_6">${student.SGender}</td>
+                                        <td class="cell100 column7_7">${student.phone_number}</td>
+                                    </tr>
+                                </c:forEach>
+                                </tbody>
+                            </table>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
-    </div>
-    <button onclick="window.location.href='mail.jsp'">mail</button>
+        <table>
+            <tr>
+                <td>subject : <input type="text" name="subject"/></td>
+            </tr>
+            <tr>
+                <td>body : <textarea rows="10" cols="50" name="body"></textarea></td>
+            </tr>
+        </table>
+        <input type="submit" value="mailmailmail">
+    </form>
     <button onclick="window.location.href='redirectToHomeAction.do'">back to home</button>
 </div>
 <script src="vendor/jquery/jquery-3.2.1.min.js"></script>
@@ -99,7 +111,7 @@
         //get search id
         let searchId = $('#search').val();
 
-        let parent = $('.cell100.column1_1');
+        let parent = $('.cell100.column2_2');
         for (let child of parent) {
             if (child.innerHTML !== "sNumber" && child.innerHTML !== searchId) {
                 let tr = child.parentElement;
@@ -108,6 +120,17 @@
             }
         }
     }
+
+    function check() {
+        let mailList = document.getElementsByName("mailList");
+
+        for (let mail of mailList) {
+            if (mail.checked) return true;
+        }
+        return false;
+    }
+
+
 </script>
 <script src="js/main.js"></script>
 </body>

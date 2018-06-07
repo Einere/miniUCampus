@@ -16,6 +16,6 @@ public class SignoutAction implements CommandAction {
         session.removeAttribute("identity");
         session.removeAttribute("dest");
         session.removeAttribute("lectureName");
-        return "index.jsp";
+        return "login.jsp";
     }
 }
